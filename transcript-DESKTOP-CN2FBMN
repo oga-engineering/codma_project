@@ -1,0 +1,377 @@
+# Compile of setup_tb.sv failed with 2 errors.
+# 1 compiles, 4 failed with 2 errors.
+# Compile of setup_tb.sv failed with 1 errors.
+# 1 compiles, 4 failed with 1 error.
+# Compile of setup_tb.sv failed with 1 errors.
+# 1 compiles, 4 failed with 1 error.
+# Compile of setup_tb.sv failed with 1 errors.
+# 1 compiles, 4 failed with 1 error.
+cd C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git
+# Compile of setup_tb.sv failed with 1 errors.
+# 1 compiles, 4 failed with 1 error.
+# Compile of setup_tb.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv failed with 1 errors.
+# 3 compiles, 5 failed with 2 errors.
+# Compile of setup_tb.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv failed with 1 errors.
+# 3 compiles, 5 failed with 2 errors.
+# Error opening C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/move_func.sv
+# Path name 'C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/move_func.sv' doesn't exist.
+# Error opening C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/bus_interface.sv
+# Path name 'C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/bus_interface.sv' doesn't exist.
+# Error opening C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/bus_interface.sv
+# Path name 'C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/bus_interface.sv' doesn't exist.
+# Compile of setup_tb.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv failed with 1 errors.
+# Compile of top.sv failed with 25 errors.
+# 4 compiles, 3 failed with 27 errors.
+clear
+# invalid command name "clear"
+# Compile of setup_tb.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv failed with 1 errors.
+# Compile of top.sv failed with 25 errors.
+# 4 compiles, 3 failed with 27 errors.
+# Compile of setup_tb.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv failed with 1 errors.
+# Compile of top.sv failed with 25 errors.
+# 4 compiles, 3 failed with 27 errors.
+# Compile of setup_tb.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv failed with 1 errors.
+# Compile of top.sv failed with 25 errors.
+# 4 compiles, 3 failed with 27 errors.
+# Compile of setup_tb.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv failed with 1 errors.
+# Compile of top.sv failed with 25 errors.
+# 4 compiles, 3 failed with 27 errors.
+# Compile of setup_tb.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# 4 compiles, 3 failed with 3 errors.
+# Compile of setup_tb.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv was successful.
+# Compile of top.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of setup_tb.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv was successful.
+# Compile of top.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.temp_tb
+# vsim -gui work.temp_tb 
+# Start time: 09:53:49 on Feb 27,2023
+# Loading sv_std.std
+# Loading work.setup_tb_sv_unit
+# Loading work.temp_tb
+# Loading work.top
+# ** Error: (vsim-3033) Instantiation of 'bus_if' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv Line: 37
+#         Searched libraries:
+#             C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/work
+# Error loading design
+# End time: 09:53:50 on Feb 27,2023, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 24
+# Compile of setup_tb.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv was successful.
+# Compile of top.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.temp_tb
+# vsim -gui work.temp_tb 
+# Start time: 09:55:18 on Feb 27,2023
+# Loading sv_std.std
+# Loading work.setup_tb_sv_unit
+# Loading work.temp_tb
+# Loading work.top
+# ** Error: (vsim-3033) Instantiation of 'bus_if' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv Line: 37
+#         Searched libraries:
+#             C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/work
+# Error loading design
+# End time: 09:55:19 on Feb 27,2023, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 2
+# Compile of setup_tb.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv was successful.
+# Compile of top.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.temp_tb
+# vsim -gui work.temp_tb 
+# Start time: 09:56:43 on Feb 27,2023
+# Loading sv_std.std
+# Loading work.setup_tb_sv_unit
+# Loading work.temp_tb
+# Loading work.top
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 7, found 2.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv Line: 12
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'start_i'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'busy_o'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'irq'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'status_pointer_i'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'task_pointer_i'.
+# ** Error: (vsim-3043) Unresolved reference to 'move_0'.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv Line: 97
+# ** Fatal: (vsim-3365) Too many port connections. Expected 1, found 10.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT/_bus_if File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv Line: 37
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 09:56:43 on Feb 27,2023, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 8
+# Compile of setup_tb.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv was successful.
+# Compile of top.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.temp_tb
+# vsim -gui work.temp_tb 
+# Start time: 09:58:34 on Feb 27,2023
+# Loading sv_std.std
+# Loading work.setup_tb_sv_unit
+# Loading work.temp_tb
+# Loading work.top
+# ** Error: (vsim-7) Failed to open data file "C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/work/_bus_if/_primary.dat" in read mode.
+# No such file or directory. (errno = ENOENT)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 7, found 2.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv Line: 12
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'start_i'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'busy_o'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'irq'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'status_pointer_i'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'task_pointer_i'.
+# ** Error: (vsim-3043) Unresolved reference to 'move_0'.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv Line: 97
+# ** Fatal: (vsim-3365) Too many port connections. Expected 1, found 10.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT/_bus_if File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv Line: 37
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 09:58:34 on Feb 27,2023, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 8
+# Compile of setup_tb.sv was successful.
+# Compile of bus_interface.sv failed with 1 errors.
+# Compile of move_func.sv failed with 6 errors.
+# Compile of top.sv failed with 20 errors.
+# 4 compiles, 3 failed with 27 errors.
+# Compile of setup_tb.sv was successful.
+# Compile of bus_interface.sv failed with 2 errors.
+# Compile of move_func.sv failed with 5 errors.
+# Compile of top.sv failed with 1 errors.
+# 4 compiles, 3 failed with 8 errors.
+# Compile of setup_tb.sv was successful.
+# Compile of bus_interface.sv failed with 2 errors.
+# Compile of move_func.sv failed with 5 errors.
+# Compile of top.sv failed with 1 errors.
+# 4 compiles, 3 failed with 8 errors.
+# Compile of setup_tb.sv was successful.
+# Compile of bus_interface.sv failed with 1 errors.
+# Compile of move_func.sv failed with 6 errors.
+# Compile of top.sv failed with 20 errors.
+# 4 compiles, 3 failed with 27 errors.
+# Compile of setup_tb.sv failed with 1 errors.
+# Compile of bus_interface.sv failed with 1 errors.
+# Compile of move_func.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# 4 compiles, 4 failed with 4 errors.
+# Compile of setup_tb.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv was successful.
+# Compile of top.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.temp_tb
+# vsim -gui work.temp_tb 
+# Start time: 10:02:13 on Feb 27,2023
+# Loading sv_std.std
+# Loading work.setup_tb_sv_unit
+# Loading work.temp_tb
+# Loading work.top
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 7, found 2.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv Line: 12
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'start_i'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'busy_o'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'irq'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'status_pointer_i'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'task_pointer_i'.
+# ** Error: (vsim-3043) Unresolved reference to 'move_0'.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv Line: 97
+# ** Fatal: (vsim-3365) Too many port connections. Expected 1, found 10.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT/_bus_if File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv Line: 37
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 10:02:13 on Feb 27,2023, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 13
+# Compile of setup_tb.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv was successful with warnings.
+# Compile of top.sv was successful with warnings.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.temp_tb
+# vsim -gui work.temp_tb 
+# Start time: 10:03:56 on Feb 27,2023
+# Loading sv_std.std
+# Loading work.setup_tb_sv_unit
+# Loading work.temp_tb
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.bus_if
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 7, found 2.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv Line: 12
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'start_i'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'busy_o'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'irq'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'status_pointer_i'.
+# ** Warning: (vsim-3722) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv(12): [TFMPC] - Missing connection for port 'task_pointer_i'.
+# ** Fatal: (vsim-3365) Too many port connections. Expected 1, found 10.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT/_bus_if File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv Line: 38
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 10:03:56 on Feb 27,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 8
+# Compile of setup_tb.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful with warnings.
+# Compile of move_func.sv was successful.
+# Compile of top.sv failed with 4 errors.
+# 4 compiles, 2 failed with 5 errors.
+# Compile of setup_tb.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv was successful.
+# Compile of top.sv failed with 4 errors.
+# 4 compiles, 2 failed with 5 errors.
+# Compile of setup_tb.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv was successful.
+# Compile of top.sv failed with 6 errors.
+# 4 compiles, 2 failed with 7 errors.
+# Compile of setup_tb.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv was successful.
+# Compile of top.sv failed with 6 errors.
+# 4 compiles, 2 failed with 7 errors.
+# Compile of setup_tb.sv failed with 2 errors.
+# Compile of bus_interface.sv failed with 1 errors.
+# Compile of move_func.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# 4 compiles, 4 failed with 5 errors.
+# Compile of setup_tb.sv failed with 2 errors.
+# Compile of bus_interface.sv failed with 1 errors.
+# Compile of move_func.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# 4 compiles, 4 failed with 5 errors.
+# Compile of setup_tb.sv failed with 2 errors.
+# Compile of bus_interface.sv failed with 1 errors.
+# Compile of move_func.sv failed with 1 errors.
+# Compile of top.sv failed with 1 errors.
+# 4 compiles, 4 failed with 5 errors.
+# Compile of setup_tb.sv was successful.
+# Compile of bus_interface.sv failed with 2 errors.
+# Compile of move_func.sv failed with 2 errors.
+# Compile of top.sv failed with 4 errors.
+# 4 compiles, 3 failed with 8 errors.
+# Compile of setup_tb.sv was successful.
+# Compile of bus_interface.sv failed with 2 errors.
+# Compile of move_func.sv failed with 2 errors.
+# Compile of top.sv failed with 4 errors.
+# 4 compiles, 3 failed with 8 errors.
+# Compile of setup_tb.sv was successful with warnings.
+# Compile of bus_interface.sv failed with 2 errors.
+# Compile of move_func.sv failed with 2 errors.
+# Compile of top.sv failed with 4 errors.
+# 4 compiles, 3 failed with 8 errors.
+# Compile of setup_tb.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv was successful.
+# Compile of top.sv was successful with warnings.
+# 4 compiles, 1 failed with 1 error.
+# Compile of setup_tb.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv was successful.
+# Compile of top.sv was successful with warnings.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.temp_tb
+# vsim -gui work.temp_tb 
+# Start time: 10:17:47 on Feb 27,2023
+# Loading sv_std.std
+# Loading work.setup_tb_sv_unit
+# Loading work.temp_tb
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.bus_if
+# ** Error (suppressible): (vsim-3584) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv(39): Module parameter 'ADDR_SIZE' not found for override.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv
+# ** Error (suppressible): (vsim-3584) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv(39): Module parameter 'DATA_SIZE' not found for override.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv
+# Error loading design
+# End time: 10:17:48 on Feb 27,2023, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 13
+# Compile of setup_tb.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv was successful.
+# Compile of top.sv was successful with warnings.
+# Compile of global_params.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.temp_tb
+# vsim -gui work.temp_tb 
+# Start time: 10:18:52 on Feb 27,2023
+# Loading sv_std.std
+# Loading work.setup_tb_sv_unit
+# Loading work.temp_tb
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.bus_if
+# ** Error (suppressible): (vsim-3584) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv(39): Module parameter 'ADDR_SIZE' not found for override.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv
+# ** Error (suppressible): (vsim-3584) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv(39): Module parameter 'DATA_SIZE' not found for override.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv
+# Error loading design
+# End time: 10:18:52 on Feb 27,2023, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 3
+# Compile of setup_tb.sv was successful with warnings.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv was successful.
+# Compile of top.sv was successful with warnings.
+# Compile of global_params.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.temp_tb
+# vsim -gui work.temp_tb 
+# Start time: 10:19:43 on Feb 27,2023
+# Loading sv_std.std
+# Loading work.setup_tb_sv_unit
+# Loading work.temp_tb
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.bus_if
+# ** Error (suppressible): (vsim-3584) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv(39): Module parameter 'ADDR_SIZE' not found for override.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv
+# ** Error (suppressible): (vsim-3584) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv(39): Module parameter 'DATA_SIZE' not found for override.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv
+# Error loading design
+# End time: 10:19:44 on Feb 27,2023, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 2
+# Compile of setup_tb.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of move_func.sv was successful.
+# Compile of top.sv was successful with warnings.
+# Compile of global_params.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.temp_tb
+# vsim -gui work.temp_tb 
+# Start time: 10:22:09 on Feb 27,2023
+# Loading sv_std.std
+# Loading work.setup_tb_sv_unit
+# Loading work.temp_tb
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.bus_if
+# ** Error (suppressible): (vsim-3584) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv(39): Module parameter 'ADDR_SIZE' not found for override.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv
+# ** Error (suppressible): (vsim-3584) C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv(39): Module parameter 'DATA_SIZE' not found for override.
+#    Time: 0 ps  Iteration: 0  Instance: /temp_tb/UUT File: C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv
+# Error loading design
+# End time: 10:22:10 on Feb 27,2023, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 2
