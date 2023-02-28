@@ -131,17 +131,6 @@ end
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 if (EXAMPLE_PRESET) begin
 	//--------------------------------------------------
 	// 1 Double Word Write Error Example 
