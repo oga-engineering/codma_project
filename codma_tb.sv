@@ -4,7 +4,7 @@ module codma_tb ();
 // Local Signal Definition
 //=======================================================================================
 logic EXAMPLE_PRESET;
-assign EXAMPLE_PRESET = 1;
+assign EXAMPLE_PRESET = 0;
 
 logic USE_CODMA;
 assign USE_CODMA = 1;
@@ -112,8 +112,8 @@ begin
 	*/
 
 	@(negedge clk);
-	inst_mem.mem_array[0] = 64'h00000000ffffffff;
-	inst_mem.mem_array[1] = 64'hffffffff00000000;
+	inst_mem.mem_array[0] = 64'h0000000400000001;
+	inst_mem.mem_array[1] = 64'h0000000900000000;
 
 //--------------------------------------------------
 // Co-DMA stimulus
@@ -126,7 +126,8 @@ inst_mem.mem_array[3] = 64'hf0f0f0f000000000;
 inst_mem.mem_array[2] = 64'h1011011100000000;
 task_pointer = 'd1;
 start_s = '1;
-
+#50
+start_s = '0;
 end
 
 
