@@ -9,75 +9,75 @@ z2
 !i10f 100
 cModel Technology
 dC:/intelFPGA/20.1
-Ybus_if
+YBUS_IF
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 DXx4 work 11 top_sv_unit 0 22 zJFa`[OZOkU:cd^ZO`fg@3
-Z2 !s110 1677493320
+Z1 !s110 1678727909
+!i10b 1
+!s100 5`B;I;8jTk8nz_>d`N2R83
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I6Ja;[f>N@SiSjHFNGW<172
 Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z4 dC:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git
+w1677517134
+8C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_interfaces.sv
+FC:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_interfaces.sv
+!i122 1714
+L0 2 0
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1678727908.000000
+!s107 C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_interfaces.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_interfaces.sv|
+!i113 1
+Z7 o-work work -sv
+Z8 tCvgOpt 0
+n@b@u@s_@i@f
+Ybus_if
+R0
+Z9 DXx4 work 11 top_sv_unit 0 22 zJFa`[OZOkU:cd^ZO`fg@3
+Z10 !s110 1677493320
+R3
 r1
 !s85 0
 !i10b 1
 !s100 bjbJ8WVW4Mc6Rd>mKL=RJ0
 IbfX4`EnUG7e`gFQafoC1Q0
-Z4 !s105 top_sv_unit
+Z11 !s105 top_sv_unit
 S1
-Z5 dC:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git
+Z12 dC:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git
 w1677492317
 8bus_interface.sv
-Z6 Fbus_interface.sv
+Z13 Fbus_interface.sv
 !i122 157
-Z7 L0 5 0
-Z8 OV;L;2020.1;71
+Z14 L0 5 0
+R5
 31
-Z9 !s108 1677493320.000000
-Z10 !s107 global_params.sv|bus_interface.sv|move_func.sv|C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv|
-Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv|
+Z15 !s108 1677493320.000000
+Z16 !s107 global_params.sv|bus_interface.sv|move_func.sv|C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv|
+Z17 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv|
 !i113 1
-Z12 o-work work -sv
-Z13 tCvgOpt 0
-YBUS_IF
-R0
-Z14 !s110 1677585833
-!i10b 1
-!s100 5`B;I;8jTk8nz_>d`N2R83
-Z15 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IoXjB[VaGHDe^O4]0jFk5<1
-R3
-S1
-Z16 dC:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git
-w1677517134
-8C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_interfaces.sv
-FC:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_interfaces.sv
-!i122 399
-L0 2 0
+R7
 R8
-r1
-!s85 0
-31
-Z17 !s108 1677585833.000000
-!s107 C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_interfaces.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_interfaces.sv|
-!i113 1
-R12
-R13
-n@b@u@s_@i@f
 vbus_interface
 R0
 !s110 1677491705
 !i10b 1
 !s100 hfe6gM45;;RFRdlJMDA1j1
-R15
+R2
 IJSGXL;5hiD2kcgN]_?``F2
 R3
 S1
-R5
+R12
 w1676894734
 Z18 8C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/bus_interface.sv
 Z19 FC:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/bus_interface.sv
 Z20 Fglobal_params.sv
 !i122 95
 L0 4 22
-R8
+R5
 r1
 !s85 0
 31
@@ -85,8 +85,8 @@ r1
 Z21 !s107 global_params.sv|C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/bus_interface.sv|
 Z22 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/bus_interface.sv|
 !i113 1
-R12
-R13
+R7
+R8
 Xbus_interface_sv_unit
 R0
 Z23 !s110 1677493319
@@ -98,49 +98,132 @@ r1
 I0=b_3lm^k2k8flX01VCm43
 !i103 1
 S1
-R5
+R12
 Z24 w1677493314
 R18
 R19
 R20
 !i122 155
 Z25 L0 8 0
-R8
+R5
 31
 Z26 !s108 1677493319.000000
 R21
 R22
 !i113 1
-R12
-R13
-vcodma_tb
+R7
+R8
+vcodma_machine
 R0
-R14
+Z27 DXx4 work 8 read_pkg 0 22 YgoO=EQCoETGiMAn`N3[I2
+Z28 DXx4 work 9 write_pkg 0 22 F=0jF0IAXD5lFM:;zckT=0
+Z29 DXx4 work 7 dma_pkg 0 22 A6gU0@ULGeD`Id9D:0jD52
+Z30 !s110 1678727910
 !i10b 1
-!s100 l_eozQ5?:d2Q>^:Q4ihg=1
-R15
-IGZ<2;KPoN7`Cle:T;TWf@0
+!s100 8iDobKhzgjg[LV1ocYDAj2
+R2
+I[999aCm]oK?Ci]AHA8;4b3
 R3
 S1
-R16
-w1677584636
-8C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv
-FC:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv
-!i122 401
-L0 1 240
-R8
+R4
+w1678727209
+8C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/codma_machine.sv
+FC:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/codma_machine.sv
+!i122 1717
+L0 1 185
+R5
 r1
 !s85 0
 31
-R17
-!s107 C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv|
+Z31 !s108 1678727910.000000
+!s107 C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/codma_machine.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/codma_machine.sv|
 !i113 1
-R12
-R13
+R7
+R8
+vcodma_tb
+R0
+R29
+Z32 !s110 1678727908
+!i10b 1
+!s100 kj]B90;j11[5G=E;4FGb]2
+R2
+I`Qh`nT>Jjn[<cbCn]UJ0z2
+R3
+S1
+R4
+w1678727901
+8C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv
+FC:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv
+Ftb_tasks.sv
+!i122 1713
+L0 1 383
+R5
+r1
+!s85 0
+31
+R6
+!s107 tb_tasks.sv|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv|
+!i113 1
+R7
+R8
+vdma_machine
+R0
+R27
+R28
+R29
+!s110 1678716006
+!i10b 1
+!s100 cHCEn0BHj;^0IGG<VoSLj0
+R2
+Ido6;;:lFddL31[a6<;@9]2
+R3
+S1
+R4
+w1678714763
+8C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_machines.sv
+FC:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_machines.sv
+!i122 1474
+L0 165 68
+R5
+r1
+!s85 0
+31
+!s108 1678716006.000000
+!s107 machine_pkg.sv|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_machines.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_machines.sv|
+!i113 1
+R7
+R8
+Xdma_pkg
+R0
+Z33 !s110 1678727911
+!i10b 1
+!s100 jm1B;VlNkKjHIM6AK;>2d3
+R2
+IA6gU0@ULGeD`Id9D:0jD52
+VA6gU0@ULGeD`Id9D:0jD52
+S1
+R4
+Z34 w1678189824
+Z35 8machine_pkg.sv
+Z36 Fmachine_pkg.sv
+!i122 1718
+L0 21 0
+R5
+r1
+!s85 0
+31
+R31
+!s107 machine_pkg.sv|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/rd_wr_machines.sv|
+Z37 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/rd_wr_machines.sv|
+!i113 1
+R7
+R8
 Xglobal_params_sv_unit
 R0
-R14
+!s110 1677585833
 VnTNWAR=5ZE4IX@4`7SzHe3
 r1
 !s85 0
@@ -149,70 +232,73 @@ r1
 InTNWAR=5ZE4IX@4`7SzHe3
 !i103 1
 S1
-R16
+Z38 dC:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git
 R24
 8C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/global_params.sv
 FC:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/global_params.sv
 !i122 396
 R25
-R8
+R5
 31
 !s108 1677585832.000000
 !s107 C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/global_params.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/global_params.sv|
 !i113 1
-R12
-R13
+R7
+R8
 vip_checker
 R0
-R14
+R1
 !i10b 1
 !s100 zZg5MaUQH0]7J<8Q5z@Y<0
-R15
-INM`OfLB35S<@GgG7IoAbl2
+R2
+IIb0Lj50eaKA7>7iz=fA6X2
 R3
 S1
-R16
+R4
 w1677511292
-8C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_checker.sv
-FC:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_checker.sv
-!i122 400
+8C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_checker.sv
+FC:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_checker.sv
+!i122 1715
 L0 1 68
-R8
+R5
 r1
 !s85 0
 31
-R17
-!s107 C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_checker.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_checker.sv|
+Z39 !s108 1678727909.000000
+!s107 C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_checker.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_checker.sv|
 !i113 1
-R12
-R13
+R7
+R8
 vip_codma
 R0
-R14
+R27
+R28
+R29
+!s110 1678196655
 !i10b 1
-!s100 CBBfDH;gSgFzNClDJFG;80
-R15
-IY:JVTQnVUDNg?=HTn^@O00
+!s100 <5]Vm2PCP[VAG31_HPiR<2
+R2
+IWoH@L>MLCcG8_fo]e>bGE1
 R3
 S1
-R16
-w1677585829
-Z27 8C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv
-Z28 FC:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv
-!i122 398
-L0 2 97
-R8
+R4
+w1678196236
+8C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv
+FC:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv
+!i122 1183
+L0 4 168
+R5
 r1
 !s85 0
 31
-R17
-!s107 C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv|
-Z29 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv|
+!s108 1678196655.000000
+!s107 machine_pkg.sv|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv|
 !i113 1
-R12
-R13
+R7
+R8
 Xip_codma_sv_unit
 R0
 !s110 1677579335
@@ -224,73 +310,101 @@ r1
 IY3`eIA13UfUG^NI^Pi;;T3
 !i103 1
 S1
-R16
+R38
 w1677579330
-R27
-R28
+8C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv
+FC:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv
 Fcodma_tasks.sv
 !i122 250
-L0 1 0
-R8
+Z40 L0 1 0
+R5
 31
 !s108 1677579335.000000
 !s107 codma_tasks.sv|C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv|
-R29
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv|
 !i113 1
-R12
-R13
-vip_mem
+R7
+R8
+vip_codma_top
 R0
-R14
+R27
+R28
+R29
+R30
 !i10b 1
-!s100 D<VZXhUiICIG;Wh`NicRE3
-R15
-IU0^3Mlad4oVSGk<WcVXc?0
+!s100 b9@ZG@37noUNznNZQ8H>o0
+R2
+IE=oVM>kSCJF`PzW^AiEz13
 R3
 S1
-R16
-w1677582753
-8C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_mem.sv
-FC:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_mem.sv
-!i122 397
-L0 1 467
-R8
+R4
+w1678723136
+8C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv
+FC:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv
+!i122 1716
+L0 3 96
+R5
 r1
 !s85 0
 31
-R17
-!s107 C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_mem.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_mem.sv|
+R39
+!s107 machine_pkg.sv|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv|
 !i113 1
-R12
-R13
+R7
+R8
+vip_mem
+R0
+R32
+!i10b 1
+!s100 D<VZXhUiICIG;Wh`NicRE3
+R2
+ITh0`HB6^GbZ@lLIjR<`=D2
+R3
+S1
+R4
+w1677582753
+8C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_mem.sv
+FC:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_mem.sv
+!i122 1712
+L0 1 467
+R5
+r1
+!s85 0
+31
+!s108 1678727907.000000
+!s107 C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_mem.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_mem.sv|
+!i113 1
+R7
+R8
 vmove_func
 R0
 !s110 1677492124
 !i10b 1
 !s100 bED9^N[_b0OYDkaFOJzgb2
-R15
+R2
 I]Il]hF_4I32GLI5`lO;WB1
 R3
 S1
-R5
+R12
 w1677492116
-Z30 8C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/move_func.sv
-Z31 FC:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/move_func.sv
-R6
+Z41 8C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/move_func.sv
+Z42 FC:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/move_func.sv
+R13
 R20
 !i122 113
 L0 6 33
-R8
+R5
 r1
 !s85 0
 31
 !s108 1677492123.000000
-Z32 !s107 global_params.sv|bus_interface.sv|C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/move_func.sv|
-Z33 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/move_func.sv|
+Z43 !s107 global_params.sv|bus_interface.sv|C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/move_func.sv|
+Z44 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/move_func.sv|
 !i113 1
-R12
-R13
+R7
+R8
 Xmove_func_sv_unit
 R0
 R23
@@ -302,22 +416,98 @@ r1
 IdDA]2YjSdZ[IJCVzjk9Gg3
 !i103 1
 S1
-R5
+R12
 R24
-R30
-R31
-R6
+R41
+R42
+R13
 R20
 !i122 156
 R25
-R8
+R5
 31
 R26
-R32
-R33
+R43
+R44
 !i113 1
-R12
-R13
+R7
+R8
+vread_machine
+R0
+R27
+R33
+!i10b 1
+!s100 B]g[FWCRmVzQb;o^V9ZUn2
+R2
+I[h7A_CzA?>[eNm1dfSHhL0
+R3
+S1
+R4
+Z45 w1678723127
+Z46 8C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/rd_wr_machines.sv
+Z47 FC:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/rd_wr_machines.sv
+!i122 1718
+L0 4 80
+R5
+r1
+!s85 0
+31
+R31
+Z48 !s107 machine_pkg.sv|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/rd_wr_machines.sv|
+R37
+!i113 1
+R7
+R8
+Xread_pkg
+R0
+R33
+!i10b 1
+!s100 Z:U2:8UA9kMZA>nG[:zRk0
+R2
+IYgoO=EQCoETGiMAn`N3[I2
+VYgoO=EQCoETGiMAn`N3[I2
+S1
+R4
+R34
+R35
+R36
+!i122 1718
+R40
+R5
+r1
+!s85 0
+31
+R31
+R48
+R37
+!i113 1
+R7
+R8
+vread_write_machine
+R0
+!s110 1678117679
+!i10b 1
+!s100 `hAMM61>k0]H7QRWaZPf51
+R2
+IDYMo:PaEcWiPl81K:X=_g1
+R3
+S1
+R4
+w1678117506
+8C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_rd_wr_machine.sv
+FC:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_rd_wr_machine.sv
+!i122 758
+L0 1 99
+R5
+r1
+!s85 0
+31
+!s108 1678117678.000000
+!s107 C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_rd_wr_machine.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma_rd_wr_machine.sv|
+!i113 1
+R7
+R8
 Xsetup_tb_sv_unit
 R0
 R23
@@ -329,21 +519,21 @@ r1
 I:k3B6Bn>g]JQS4HOIc7RV3
 !i103 1
 S1
-R5
+R12
 R24
-Z34 8C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv
-Z35 FC:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv
+Z49 8C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv
+Z50 FC:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv
 R20
 !i122 154
-R7
-R8
+R14
+R5
 31
 R26
-Z36 !s107 global_params.sv|C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv|
-Z37 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv|
+Z51 !s107 global_params.sv|C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv|
+Z52 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/setup_tb.sv|
 !i113 1
-R12
-R13
+R7
+R8
 vtemp_tb
 R0
 DXx4 work 16 setup_tb_sv_unit 0 22 :k3B6Bn>g]JQS4HOIc7RV3
@@ -356,49 +546,49 @@ r1
 I_cf:D2o[hi@:EGCU_E73R0
 !s105 setup_tb_sv_unit
 S1
-R5
+R12
 w1677493190
-R34
-R35
+R49
+R50
 !i122 154
 L0 9 18
-R8
+R5
 31
 R26
-R36
-R37
+R51
+R52
 !i113 1
-R12
-R13
+R7
+R8
 vtop
 R0
-R1
-R2
+R9
+R10
 R3
 r1
 !s85 0
 !i10b 1
 !s100 AgRengPjQK7`kXH4PWDLS2
 I]M5GQ4QIB:Z_;k1j^5RJA3
-R4
+R11
 S1
-R5
+R12
 w1677492869
-Z38 8C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv
-Z39 FC:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv
+Z53 8C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv
+Z54 FC:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv
 !i122 157
 L0 18 99
-R8
+R5
 31
-R9
-R10
-R11
+R15
+R16
+R17
 !i113 1
-R12
-R13
+R7
+R8
 Xtop_sv_unit
 R0
-R2
+R10
 VzJFa`[OZOkU:cd^ZO`fg@3
 r1
 !s85 0
@@ -407,20 +597,71 @@ r1
 IzJFa`[OZOkU:cd^ZO`fg@3
 !i103 1
 S1
-R5
+R12
 R24
-R38
-R39
+R53
+R54
 Fmove_func.sv
-R6
+R13
 R20
 !i122 157
 R25
-R8
+R5
 31
-R9
-R10
-R11
+R15
+R16
+R17
 !i113 1
-R12
-R13
+R7
+R8
+vwrite_machine
+R0
+R28
+R33
+!i10b 1
+!s100 N<B9bl6z`kG`fQHmMJjLN1
+R2
+I?z<A7hV_IolEle5ciSUD]0
+R3
+S1
+R4
+R45
+R46
+R47
+!i122 1718
+L0 85 78
+R5
+r1
+!s85 0
+31
+R31
+R48
+R37
+!i113 1
+R7
+R8
+Xwrite_pkg
+R0
+R33
+!i10b 1
+!s100 C@QGH9o]9bTZlm4UoA[gV0
+R2
+IF=0jF0IAXD5lFM:;zckT=0
+VF=0jF0IAXD5lFM:;zckT=0
+S1
+R4
+R34
+R35
+R36
+!i122 1718
+L0 11 0
+R5
+r1
+!s85 0
+31
+R31
+R48
+R37
+!i113 1
+R7
+R8

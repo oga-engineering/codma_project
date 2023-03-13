@@ -1,10 +1,10 @@
 module codma_tb ();
-
+`include "tb_tasks.sv"
 //=======================================================================================
 // Local Signal Definition
 //=======================================================================================
 logic EXAMPLE_PRESET;
-assign EXAMPLE_PRESET = 1;
+assign EXAMPLE_PRESET = 0;
 
 logic USE_CODMA;
 assign USE_CODMA = 1;
@@ -14,6 +14,9 @@ logic	start_s, stop_s, busy_s;
 logic	[31:0]	task_pointer, status_pointer;
 logic	irq_s;
 BUS_IF	bus_if();
+
+event test_done;
+event check_done;
 
 //=======================================================================================
 // Clock and Reset Initialization
@@ -37,7 +40,7 @@ initial begin
 	#30
 	reset_n	= 1;
 	#1000
-	$display("Simulation passed.");
+	$display("Test Hanging");
 	$stop;
 end
 
@@ -49,7 +52,7 @@ end
 // CoDMA Instantiation
 //--------------------------------------------------
 
-ip_codma inst_codma (
+ip_codma_top inst_codma (
 	// clock and reset
 	.clk_i			(clk),
 	.reset_n_i		(reset_n),
@@ -90,7 +93,8 @@ begin
 //--------------------------------------------------
 // Set Default Values
 //--------------------------------------------------
-
+	dma_pkg::dma_state_t        dma_state_r;
+	dma_pkg::dma_state_t        dma_state_next_s;
 	bus_if.read		= '0;
 	bus_if.write		= '0;
 	bus_if.addr		= '0;
@@ -104,44 +108,94 @@ begin
 // Setup ip_mem
 //--------------------------------------------------
 
-	/* can be used to put random values in the whole memory
+	// Fill Memory with random values
 	@(negedge clk);
 	for (int i=0; i<inst_mem.MEM_DEPTH; i++) begin
 		inst_mem.mem_array[i] = {$random(),$random()};
 	end
-	*/
-
-	@(negedge clk);
-	inst_mem.mem_array[0] = 64'h00000000ffffffff;
-	inst_mem.mem_array[1] = 64'hffffffff00000000;
-
+	
 //--------------------------------------------------
 // Co-DMA stimulus
-// TASK  TYPE 0 - BASIC MOVE
 //--------------------------------------------------
-
 if (USE_CODMA) begin
-// Send info to addr (without bus_if)
-inst_mem.mem_array[3] = 64'hf0f0f0f000000000;
-inst_mem.mem_array[2] = 64'h1011011100000000;
-task_pointer = 'd1;
-start_s = '1;
+	logic [31:0] task_type;
+	logic [31:0] len_bytes;
+	logic [31:0] source_addr_o;
+	logic [31:0] dest_addr_o;
+	logic [7:0][31:0] int_mem;
 
+	fork
+		//--------------------------------------------------
+		// DRIVE THREAD
+		//--------------------------------------------------
+		begin
+			task_type = 'd0;
+			len_bytes = $urandom_range(1,4)*'d8;
+			task_pointer = $urandom_range(0,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH;
+			setup_data(
+				clk,
+				task_pointer,
+				task_type,
+				len_bytes,
+				source_addr_o,
+				dest_addr_o,
+				int_mem
+			);
+			start_s = '1;
+			#50
+			start_s = '0;
+			wait(inst_codma.dma_state_r == dma_pkg::DMA_IDLE);
+			-> test_done;
+
+			@(check_done);
+			task_type = 'd0;
+			len_bytes = 'd16;
+			task_pointer = $urandom_range(0,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH;
+			setup_data(
+				clk,
+				task_pointer,
+				task_type,
+				len_bytes,
+				source_addr_o,
+				dest_addr_o,
+				int_mem
+			);
+			start_s = '1;
+			#50
+			start_s = '0;
+			wait(inst_codma.dma_state_r == dma_pkg::DMA_IDLE);
+			-> test_done;
+		end
+
+		//--------------------------------------------------
+		// VERIFICATION THREAD
+		//--------------------------------------------------
+		begin
+			@(test_done);
+			#20
+			check_data(
+				source_addr_o,
+				dest_addr_o,
+				task_type,
+				len_bytes,
+				int_mem
+			);
+			-> check_done;
+			@(test_done);
+			#20
+			check_data(
+				source_addr_o,
+				dest_addr_o,
+				task_type,
+				len_bytes,
+				int_mem
+			);
+		end
+	join
 end
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+/*
 if (EXAMPLE_PRESET) begin
 	//--------------------------------------------------
 	// 1 Double Word Write Error Example 
@@ -219,6 +273,8 @@ if (EXAMPLE_PRESET) begin
 
 		// check the  memory in waveforms to see if this data has correctly written to it
 	end
+end
+*/
 end
 //=======================================================================================
 // TB Checker Module Instantiation
