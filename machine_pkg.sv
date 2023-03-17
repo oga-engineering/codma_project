@@ -25,7 +25,7 @@ package dma_pkg;
       DMA_PENDING   = 3'b001,
       DMA_TASK_READ = 3'b010,
       DMA_DATA_READ	= 3'b011,
-      //DMA_COMPUTE   = 3'b110,
+      DMA_COMPUTE   = 3'b110,
       DMA_WRITING   = 3'b101
     }
     dma_state_t;

@@ -39,7 +39,7 @@ initial begin
 	reset_n	= 0;
 	#30
 	reset_n	= 1;
-	#1000
+	#2000
 	$display("Test Hanging");
 	$stop;
 end
@@ -86,6 +86,15 @@ ip_mem #(
 //=======================================================================================
 // TB Example Stimulus 
 //=======================================================================================
+logic [31:0] task_type;
+logic [31:0] len_bytes;
+logic [31:0] source_addr_o;
+logic [31:0] dest_addr_o;
+logic [31:0] source_addr_l;
+logic [31:0] dest_addr_l;
+logic [31:0] task_type_l;
+logic [31:0] len_bytes_l;
+logic [31:0][7:0][7:0] int_mem;
 
 initial 
 begin
@@ -118,27 +127,25 @@ begin
 // Co-DMA stimulus
 //--------------------------------------------------
 if (USE_CODMA) begin
-	logic [31:0] task_type;
-	logic [31:0] len_bytes;
-	logic [31:0] source_addr_o;
-	logic [31:0] dest_addr_o;
-	logic [7:0][31:0] int_mem;
-
 	fork
 		//--------------------------------------------------
 		// DRIVE THREAD
 		//--------------------------------------------------
 		begin
+			// 8 Bytes chunks
 			task_type = 'd0;
-			len_bytes = $urandom_range(1,4)*'d8;
-			task_pointer = $urandom_range(0,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH;
+			len_bytes = ($urandom_range(1,4)*8);
+			task_pointer = ($urandom_range(0,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
 			setup_data(
-				clk,
 				task_pointer,
 				task_type,
 				len_bytes,
 				source_addr_o,
 				dest_addr_o,
+				source_addr_l,
+				dest_addr_l,
+				task_type_l,
+				len_bytes_l,
 				int_mem
 			);
 			start_s = '1;
@@ -147,17 +154,44 @@ if (USE_CODMA) begin
 			wait(inst_codma.dma_state_r == dma_pkg::DMA_IDLE);
 			-> test_done;
 
+			// 32 bytes chunks
 			@(check_done);
-			task_type = 'd0;
-			len_bytes = 'd16;
-			task_pointer = $urandom_range(0,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH;
+			task_type = 'd1;
+			len_bytes = ($urandom_range(1,3)*32);
+			task_pointer = ($urandom_range(0,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
 			setup_data(
-				clk,
 				task_pointer,
 				task_type,
 				len_bytes,
 				source_addr_o,
 				dest_addr_o,
+				source_addr_l,
+				dest_addr_l,
+				task_type_l,
+				len_bytes_l,
+				int_mem
+			);
+			start_s = '1;
+			#50
+			start_s = '0;
+			wait(inst_codma.dma_state_r == dma_pkg::DMA_IDLE);
+			-> test_done;
+
+			// 32 bytes chunks ; Move Link
+			@(check_done);
+			task_type = 'd2;
+			len_bytes = ($urandom_range(1,2)*'d32);
+			task_pointer = ($urandom_range(0,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
+			setup_data(
+				task_pointer,
+				task_type,
+				len_bytes,
+				source_addr_o,
+				dest_addr_o,
+				source_addr_l,
+				dest_addr_l,
+				task_type_l,
+				len_bytes_l,
 				int_mem
 			);
 			start_s = '1;
@@ -171,31 +205,54 @@ if (USE_CODMA) begin
 		// VERIFICATION THREAD
 		//--------------------------------------------------
 		begin
-			@(test_done);
-			#20
+			@(test_done)
 			check_data(
 				source_addr_o,
 				dest_addr_o,
+				source_addr_l,
+				dest_addr_l,
 				task_type,
 				len_bytes,
+				task_type_l,
+				len_bytes_l,
 				int_mem
 			);
 			-> check_done;
+			
 			@(test_done);
-			#20
 			check_data(
 				source_addr_o,
 				dest_addr_o,
+				source_addr_l,
+				dest_addr_l,
 				task_type,
 				len_bytes,
+				task_type_l,
+				len_bytes_l,
+				int_mem
+			);
+			-> check_done;
+
+			@(test_done)
+			check_data(
+				source_addr_o,
+				dest_addr_o,
+				source_addr_l,
+				dest_addr_l,
+				task_type,
+				len_bytes,
+				task_type_l,
+				len_bytes_l,
 				int_mem
 			);
 		end
 	join
+	#50
+	$display("TESTS PASS!");
+	$stop;
 end
 
 
-/*
 if (EXAMPLE_PRESET) begin
 	//--------------------------------------------------
 	// 1 Double Word Write Error Example 
@@ -274,8 +331,7 @@ if (EXAMPLE_PRESET) begin
 		// check the  memory in waveforms to see if this data has correctly written to it
 	end
 end
-*/
-end
+
 //=======================================================================================
 // TB Checker Module Instantiation
 //=======================================================================================
