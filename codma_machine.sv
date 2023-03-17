@@ -1,4 +1,4 @@
-module codma_machine(   
+module codma_machine (   
         input               clk_i,
         input               reset_n_i,    
         input               start_i,
@@ -19,7 +19,7 @@ module codma_machine(
         input               need_read_o,
         output logic        need_write_i,
         input               need_write_o,
-        output logic [63:0] write_data,
+        output logic [7:0][31:0] write_data,
         input [7:0][31:0]   data_reg
     );
     
@@ -29,6 +29,8 @@ module codma_machine(
     logic [31:0] destin_addr;
     logic [31:0] source_addr;
     logic [31:0] len_bytes;
+    logic [31:0] task_pointer_s;
+    logic        error_flag;
 
     always_comb begin
         dma_state_next_s    = dma_state_r;
@@ -47,7 +49,7 @@ module codma_machine(
                 end
             end
 
-            dma_pkg::DMA_TASK_READ: // Used for link_task. Otherwise skipped
+            dma_pkg::DMA_TASK_READ: // Used for link_task - 2. Otherwise skipped
             begin
                 if (rd_state_next_s == read_pkg::RD_IDLE) begin
                     dma_state_next_s = dma_pkg::DMA_DATA_READ;
@@ -75,11 +77,12 @@ module codma_machine(
                     end
                 end
             end
-            // RESERVED FOR TASK TYPE 2 - CRC COMPUTE
-            //dma_pkg::DMA_COMPUTE:
-            //begin
-
-            //end
+            // RESERVED FOR TASK TYPE 3 - CRC COMPUTE
+            dma_pkg::DMA_COMPUTE:
+            begin
+                $display("DMA COMPUTE NOT YET DEFINED");
+                dma_state_next_s = dma_pkg::DMA_IDLE;
+            end
         endcase
     end
 
@@ -99,7 +102,7 @@ module codma_machine(
             need_read_i         <= 'd0;
             need_write_i        <= 'd0;
             source_addr         <= 'd0;
-    
+            error_flag          <= 'd0;    
         //--------------------------------------------------
         // RUNTIME OPERATIONS
         //--------------------------------------------------
@@ -117,28 +120,36 @@ module codma_machine(
                 busy_o      <= 'd1;            
                 // READ ADDRESS IN POINTER
                 reg_addr    <= task_pointer_i;
+                task_pointer_s <= task_pointer_i;
                 reg_size    <= 'd9;
                 need_read_i <= 'd1;
             end
     
-            //--------------------------------------------------
+            //------------------------------------------------------------------------
             // DMA REGISTERS
-            //--------------------------------------------------
+            //------------------------------------------------------------------------
             if (dma_state_next_s == dma_pkg::DMA_IDLE) begin
                 task_type   <= 'd0;
                 destin_addr <= 'd0;
                 len_bytes   <= 'd0;
                 
                 //deassert busy_o
-                if (/*dma_state_r == DMA_COMPUTE ||*/ dma_state_r == dma_pkg::DMA_WRITING) begin
+                if (dma_state_r == dma_pkg::DMA_COMPUTE || dma_state_r == dma_pkg::DMA_WRITING) begin
                     busy_o  <= 'd0;
                 end
     
-            // TASK 1 SPECIFIC STATE
+            // TASK 2 SPECIFIC STATE
+            //------------------------------------------------------------------------
             end else if (dma_state_next_s == dma_pkg::DMA_TASK_READ) begin
-                need_read_i <= 'd1;
-                reg_addr    <= task_pointer_i + 'd32;
-    
+                need_read_i     <= 'd1;
+                reg_size        <= 'd9;
+                reg_addr        <= task_pointer_s;
+                if (dma_state_r == dma_pkg::DMA_WRITING) begin
+                    task_pointer_s  <= task_pointer_s + 'd32;
+                end
+
+            // GATHERING DATA TO TRANSFER
+            //------------------------------------------------------------------------
             end else if (dma_state_next_s == dma_pkg::DMA_DATA_READ) begin
                 
                 need_read_i <= 'd1;
@@ -149,8 +160,14 @@ module codma_machine(
                     destin_addr <= destin_addr + 'd8;
                     // other values stay the same
 
+                end else if (dma_state_r == dma_pkg::DMA_WRITING && task_type != 'd0) begin
+                    reg_addr    <= source_addr + 'd32;
+                    source_addr <= source_addr + 'd32;
+                    destin_addr <= destin_addr + 'd32;
+                    // other values stay the same
+            
                 // first write cycle
-                end else if (dma_state_r == dma_pkg::DMA_PENDING) begin
+                end else if (dma_state_r == dma_pkg::DMA_PENDING || dma_state_r == dma_pkg::DMA_TASK_READ) begin
                     task_type   <= data_reg[0];
                     reg_addr    <= data_reg[1];
                     source_addr <= data_reg[1];
@@ -160,11 +177,19 @@ module codma_machine(
                     // function of task type
                     if (data_reg[0] == 'd0) begin
                         reg_size <= 'd3;
-                    end else if (data_reg[0] == 'd1) begin
+                    end else if (data_reg[0] != 'd0) begin
                         reg_size <= 'd9;
                     end
                 end
+
+                // Error Check
+                if (task_type > 'd3) begin
+                    // error - unrecognised task type
+                    error_flag <= 'd1;
+                    dma_state_r <= dma_pkg::DMA_IDLE;
+                end
                 
+            //------------------------------------------------------------------------
             end else if (dma_state_next_s == dma_pkg::DMA_WRITING) begin
                 need_write_i <= 'd1;
                 write_data   <= data_reg;
@@ -179,7 +204,16 @@ module codma_machine(
                         len_bytes <= len_bytes - 'd32;
                     end
                 end
+            //------------------------------------------------------------------------
+            end else if (dma_state_next_s == dma_pkg::DMA_COMPUTE) begin
+                //$display("NO REGISTER OPERATIONS DEFINED FOR THIS TASK TYPE");
+                //compute_crc inst_compute_crc (
+                //    .clk_i(clk_i),
+                //    .reset_n_i(reset_n_i),
+                //    .data_reg(data_reg),
+                //    .crc_output(crc_code)
+                //);
             end
-        end    
+        end
     end
 endmodule

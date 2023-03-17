@@ -1,497 +1,159 @@
+# Compile of top.sv was successful with warnings.
+# Compile of codma_machine.sv failed with 1 errors.
+# Compile of rd_wr_machines.sv was successful.
 # Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
+# Compile of ip_checker.sv was successful with warnings.
+# Compile of codma_tb.sv failed with 1 errors.
 # Compile of ip_codma_interfaces.sv was successful.
+# Compile of compute_crc.sv failed with 1 errors.
+# 8 compiles, 3 failed with 3 errors.
+# Compile of top.sv was successful with warnings.
+# Compile of codma_machine.sv failed with 1 errors.
+# Compile of rd_wr_machines.sv was successful.
+# Compile of ip_mem.sv was successful.
+# Compile of ip_checker.sv was successful with warnings.
+# Compile of codma_tb.sv failed with 1 errors.
+# Compile of ip_codma_interfaces.sv was successful.
+# Compile of compute_crc.sv was successful.
+# 8 compiles, 2 failed with 2 errors.
+# Compile of top.sv was successful with warnings.
+# Compile of codma_machine.sv failed with 1 errors.
+# Compile of rd_wr_machines.sv was successful.
+# Compile of ip_mem.sv was successful.
 # Compile of ip_checker.sv was successful with warnings.
 # Compile of codma_tb.sv was successful.
-# 5 compiles, 1 failed with no errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
 # Compile of ip_codma_interfaces.sv was successful.
+# Compile of compute_crc.sv was successful.
+# 8 compiles, 1 failed with 1 error.
+# Compile of top.sv was successful with warnings.
+# Compile of codma_machine.sv failed with 1 errors.
+# Compile of rd_wr_machines.sv was successful.
+# Compile of ip_mem.sv was successful.
 # Compile of ip_checker.sv was successful with warnings.
 # Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
 # Compile of ip_codma_interfaces.sv was successful.
+# Compile of compute_crc.sv was successful.
+# 8 compiles, 1 failed with 1 error.
+# Compile of top.sv was successful with warnings.
+# Compile of codma_machine.sv failed with 1 errors.
+# Compile of rd_wr_machines.sv was successful.
+# Compile of ip_mem.sv was successful.
 # Compile of ip_checker.sv was successful with warnings.
 # Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
 # Compile of ip_codma_interfaces.sv was successful.
+# Compile of compute_crc.sv was successful.
+# 8 compiles, 1 failed with 1 error.
+# Compile of top.sv was successful with warnings.
+# Compile of codma_machine.sv was successful.
+# Compile of rd_wr_machines.sv was successful.
+# Compile of ip_mem.sv was successful.
 # Compile of ip_checker.sv was successful with warnings.
 # Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv failed with 9 errors.
 # Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 1 failed with 9 errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv failed with 8 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 1 failed with 8 errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv failed with 8 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 1 failed with 8 errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv failed with 8 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 1 failed with 8 errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv failed with 8 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 1 failed with 8 errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv failed with 5 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 1 failed with 5 errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv failed with 2 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 1 failed with 2 errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv failed with 4 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 1 failed with 4 errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv failed with 4 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 1 failed with 4 errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv failed with 2 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 1 failed with 2 errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
+# Compile of compute_crc.sv was successful.
+# 8 compiles, 0 failed with no errors.
 vsim -gui work.codma_tb
 # vsim -gui work.codma_tb 
-# Start time: 10:33:11 on Mar 01,2023
+# Start time: 09:01:06 on Mar 17,2023
 # Loading sv_std.std
+# Loading work.dma_pkg
 # Loading work.codma_tb
 # Loading work.BUS_IF
-# Loading work.ip_codma
+# Loading work.write_pkg
+# Loading work.read_pkg
+# Loading work.ip_codma_top
+# Loading work.read_machine
+# Loading work.write_machine
+# Loading work.codma_machine
+# Loading work.compute_crc
 # Loading work.ip_mem
 # Loading work.ip_checker
 # ** Warning: (vsim-8311) System Verilog assertions are supported only in Questasim.
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/size' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv(74).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv Line: 176
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/addr' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv(73).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv Line: 175
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/read' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv(77).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv Line: 163
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/size' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv(74).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv Line: 160
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/addr' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv(73).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv Line: 159
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/read' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv(77).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv Line: 158
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/size' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv(74).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv Line: 144
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/addr' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv(73).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv Line: 143
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/size' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv(74).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv Line: 97
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/addr' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv(73).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv Line: 96
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/read' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/ip_codma.sv(77).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/codma_tb.sv Line: 94
-# Error loading design
-# End time: 10:33:11 on Mar 01,2023, Elapsed time: 0:00:00
-# Errors: 11, Warnings: 19
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-vsim -gui work.codma_tb
-# vsim -gui work.codma_tb 
-# Start time: 10:51:21 on Mar 01,2023
-# Loading sv_std.std
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-# ** Warning: (vsim-8311) System Verilog assertions are supported only in Questasim.
-add wave -position insertpoint sim:/codma_tb/inst_codma/*
-run
-run
-add wave -position insertpoint sim:/codma_tb/bus_if/*
-# Break key hit
+run -all
+# //-------------------------------------------------------------------------------------------------------         0
+# Begin Check: task type          0
+# Bytes transfered          8 of         32: SUCCESS
+# Bytes transfered         16 of         32: SUCCESS
+# Bytes transfered         24 of         32: SUCCESS
+# Bytes transfered         32 of         32: SUCCESS
+# //-------------------------------------------------------------------------------------------------------         1
+# Begin Check: task type          1
+# Bytes transfered         32 of         64: SUCCESS
+# Bytes transfered         64 of         64: SUCCESS
+# //-------------------------------------------------------------------------------------------------------         2
+# Begin Check: task type          2
+# Bytes transfered         32 of         32: SUCCESS
+# Check Linked Task: task type          1
+# //-------------------------------------------------------------------------------------------------------         1
+# Begin Check: task type          1
+# Bytes transfered         32 of         96: SUCCESS
+# Bytes transfered         64 of         96: SUCCESS
+# Bytes transfered         96 of         96: SUCCESS
+# TESTS PASS!
+# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(252)
+#    Time: 1092 ps  Iteration: 0  Instance: /codma_tb
+# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 252
+add wave -position end  sim:/codma_tb/inst_mem/mem_array
+add wave -position 0  sim:/codma_tb/inst_codma/start_i
+add wave -position 1  sim:/codma_tb/inst_codma/busy_o
+add wave -position 2  sim:/codma_tb/inst_codma/dma_state_r
+add wave -position 3  sim:/codma_tb/inst_codma/wr_state_r
+add wave -position 4  sim:/codma_tb/inst_codma/rd_state_r
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
+run -all
 # GetModuleFileName: The specified module could not be found.
 # 
 # 
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
+# //-------------------------------------------------------------------------------------------------------         0
+# Begin Check: task type          0
+# Bytes transfered          8 of         32: SUCCESS
+# Bytes transfered         16 of         32: SUCCESS
+# Bytes transfered         24 of         32: SUCCESS
+# Bytes transfered         32 of         32: SUCCESS
+# //-------------------------------------------------------------------------------------------------------         1
+# Begin Check: task type          1
+# Bytes transfered         32 of         64: SUCCESS
+# Bytes transfered         64 of         64: SUCCESS
+# //-------------------------------------------------------------------------------------------------------         2
+# Begin Check: task type          2
+# Bytes transfered         32 of         32: SUCCESS
+# Check Linked Task: task type          1
+# //-------------------------------------------------------------------------------------------------------         1
+# Begin Check: task type          1
+# Bytes transfered         32 of         96: SUCCESS
+# Bytes transfered         64 of         96: SUCCESS
+# Bytes transfered         96 of         96: SUCCESS
+# TESTS PASS!
+# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(252)
+#    Time: 1092 ps  Iteration: 0  Instance: /codma_tb
+# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 252
+add wave -position end sim:/codma_tb/bus_if/*
 restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-run
+run -all
 # GetModuleFileName: The specified module could not be found.
 # 
 # 
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-# Warning in wave window restart: (vish-4014) No objects found matching '/codma_tb/inst_codma/save_data'. 
-# Warning in wave window restart: (vish-4014) No objects found matching '/codma_tb/inst_codma/data_saved'. 
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv failed with 3 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 1 failed with 3 errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv failed with 4 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 1 failed with 4 errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-# ** Error: Acs sdne.
-# $
-#        Unable to replace existing ini file (C:/Users/oliver/OneDrive/Documents/Engineering/University/CoDMA_git/Co-DMA.mpf).  File can not be renamed.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-# Warning in wave window restart: (vish-4014) No objects found matching '/codma_tb/inst_codma/word_count'. 
-add wave -position insertpoint  \
-sim:/codma_tb/inst_codma/word_count_rd
-add wave -position insertpoint  \
-sim:/codma_tb/inst_codma/word_count_wr
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv failed with 1 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 1 failed with 1 error.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_mem
-# Loading work.ip_checker
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-add wave -position insertpoint sim:/codma_tb/inst_codma/*
-add wave -position insertpoint sim:/codma_tb/bus_if/*
-add wave -position insertpoint  \
-sim:/codma_tb/inst_mem/mem_array
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv failed with 2 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 1 failed with 2 errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-# Compile of ip_mem.sv was successful.
-# Compile of ip_codma.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# 5 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.ip_codma
-# Loading work.ip_mem
-# Loading work.ip_checker
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-# End time: 18:12:42 on Mar 01,2023, Elapsed time: 7:21:21
-# Errors: 0, Warnings: 1
+# //-------------------------------------------------------------------------------------------------------         0
+# Begin Check: task type          0
+# Bytes transfered          8 of         32: SUCCESS
+# Bytes transfered         16 of         32: SUCCESS
+# Bytes transfered         24 of         32: SUCCESS
+# Bytes transfered         32 of         32: SUCCESS
+# //-------------------------------------------------------------------------------------------------------         1
+# Begin Check: task type          1
+# Bytes transfered         32 of         64: SUCCESS
+# Bytes transfered         64 of         64: SUCCESS
+# //-------------------------------------------------------------------------------------------------------         2
+# Begin Check: task type          2
+# Bytes transfered         32 of         32: SUCCESS
+# Check Linked Task: task type          1
+# //-------------------------------------------------------------------------------------------------------         1
+# Begin Check: task type          1
+# Bytes transfered         32 of         96: SUCCESS
+# Bytes transfered         64 of         96: SUCCESS
+# Bytes transfered         96 of         96: SUCCESS
+# TESTS PASS!
+# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(252)
+#    Time: 1092 ps  Iteration: 0  Instance: /codma_tb
+# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 252

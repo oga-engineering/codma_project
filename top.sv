@@ -32,6 +32,7 @@ logic need_write_i, need_write_o;
 
 logic [7:0][31:0] data_reg;
 logic [7:0][31:0] write_data;
+logic [7:0][31:0] crc_code;
 
 logic [31:0] len_bytes;
 
@@ -94,5 +95,17 @@ codma_machine inst_dma_machine(
     .data_reg(data_reg)
 );
 
+compute_crc inst_compute_crc (
+    .clk_i(clk_i),
+    .reset_n_i(reset_n_i),
+    .data_reg(data_reg),
+    .dma_state_next_s(dma_state_next_s),
+    .crc_output(crc_code)
+);
+
+// ASSERTIONS (NOT FUNCTIONNING)
+assert property (
+    @(clk_i) (dma_state_next_s == dma_pkg::DMA_COMPUTE)
+) else $error("TEST ERROR");
 
 endmodule
