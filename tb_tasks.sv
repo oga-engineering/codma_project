@@ -1,4 +1,16 @@
-// Set of tasks used by the testbench
+/*
+Oliver Anderson
+Univeristy of Bath
+codma FYP 2023
+
+Set of Tasks used by the testbench (codma_tb.sv). Tasks include a setup data task that sets up the memory array
+and a task to verify the data has been copied from the correct location to the correct destination location and the number
+of copied bytes match up.
+*/
+
+//=======================================================================================
+// SETUP THE POINTERS IN THE MEM ARRAY
+//=======================================================================================
 task setup_data(
     input [31:0]    task_pointer,
     input [31:0]    task_type,
@@ -16,31 +28,28 @@ task setup_data(
 	    logic [31:0] dest_addr;
 
         // this randomisation method needs refining. May causes clashes.
-        source_addr     = $urandom_range(0,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH;
+        source_addr     = $urandom_range(0,((inst_mem.MEM_DEPTH*inst_mem.MEM_WIDTH)-(len_bytes)));
         source_addr_o   = source_addr;
         // add +32 so it doesn not overwrite the linked task. Not the smartest way, but it works
-        dest_addr       = ($urandom_range(0,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH)+32;
+        dest_addr       = $urandom_range(0,((inst_mem.MEM_DEPTH*inst_mem.MEM_WIDTH)-(len_bytes)))/*+32*/;
         dest_addr_o     = dest_addr;
 
         // assign to shape for memory module
         inst_mem.mem_array[(task_pointer/inst_mem.MEM_WIDTH)] = {source_addr,task_type};
         inst_mem.mem_array[((task_pointer/inst_mem.MEM_WIDTH)+1)] = {len_bytes,dest_addr};
 
-        // Make a copy of the mem_array before changes (avoid overlap verification issues)
-        int_mem = inst_mem.mem_array;
-
         // SETUP A LINK TASK 
         if (task_type == 'd2) begin
-            source_addr     = $urandom_range(0,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH;
-            source_addr_l   = source_addr;
-            dest_addr       = ($urandom_range(0,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
-            dest_addr_l     = dest_addr;
-            task_type_l     = $urandom_range(1,1);
+            task_type_l     = 0;
             if (task_type_l == 'd0) begin
-                len_bytes_l     = ($urandom_range(1,4)*8);
+                len_bytes_l = ($urandom_range(1,4)*8);
             end else begin
                 len_bytes_l = ($urandom_range(1,3)*32);
             end
+            source_addr     = $urandom_range(0,((inst_mem.MEM_DEPTH*inst_mem.MEM_WIDTH)-(len_bytes_l)));
+            source_addr_l   = source_addr;
+            dest_addr       = $urandom_range((dest_addr_o+len_bytes),((inst_mem.MEM_DEPTH*inst_mem.MEM_WIDTH)-(len_bytes_l)));
+            dest_addr_l     = dest_addr;
             inst_mem.mem_array[(task_pointer/inst_mem.MEM_WIDTH)+4] = {source_addr,task_type_l};
             inst_mem.mem_array[((task_pointer/inst_mem.MEM_WIDTH)+5)] = {len_bytes_l,dest_addr};
         end else begin
@@ -49,14 +58,20 @@ task setup_data(
             len_bytes_l     = 'd0;
             task_type_l     = 'd0;
         end
-        
+
+        // Make a copy of the mem_array in case a source and destination address overlap (eg in a 4 write burst)
+        int_mem = inst_mem.mem_array;
 
     end
 endtask
 
+//=======================================================================================
+// TEST THE DATA
+//=======================================================================================
 task check_data(
-    input [31:0] source_addr_o,
-    input [31:0] dest_addr_o,
+    input        status_pointer,
+    input [31:0] source_addr,
+    input [31:0] dest_addr,
     input [31:0] source_addr_l,
     input [31:0] dest_addr_l,
     input [31:0] task_type,
@@ -75,41 +90,47 @@ task check_data(
 
         
 
-        src_location = source_addr_o/inst_mem.MEM_WIDTH;
-        dst_location = dest_addr_o/inst_mem.MEM_WIDTH;
-        #50
-        if (task_type == 'd0) begin
+        src_location = source_addr/inst_mem.MEM_WIDTH;
+        dst_location = dest_addr/inst_mem.MEM_WIDTH;
+        #10
+        if ( (source_addr + len_bytes) > (inst_mem.MEM_DEPTH*inst_mem.MEM_WIDTH) || (dest_addr + len_bytes) > (inst_mem.MEM_DEPTH*inst_mem.MEM_WIDTH)) begin
+            if (inst_mem.mem_array[status_pointer] == 'd1) begin
+                $display("Task type %d succesfully flagged an error - mem addr did not exist",task_type);
+            end else begin
+                $display("Task type %d did not flag error - but should have: mem addr did not exist",task_type);
+            end
+        end else if (task_type == 'd0) begin
             for (int i=0; i<(len_bytes/8); i++ ) begin
-                if (int_mem[src_location] === inst_mem.mem_array[dst_location]) begin
+                if (int_mem[src_location] == inst_mem.mem_array[dst_location]) begin
                     pass_message(task_type, len_bytes,i);
                     src_location = src_location + i;
                     dst_location = dst_location + i;
                 end else begin
-                    fail_message(len_bytes, task_type, src_location, dst_location);
+                    fail_message(len_bytes, task_type, src_location, dst_location,int_mem);
                     src_location = src_location + i;
                     dst_location = dst_location + i;
                 end
             end
         end else if (task_type == 'd1) begin
             for (int i=0; i<(len_bytes/32); i++ ) begin
-                if (int_mem[src_location] === inst_mem.mem_array[dst_location]) begin
+                if (int_mem[src_location] == inst_mem.mem_array[dst_location]) begin
                     pass_message(task_type, len_bytes,i);
                     src_location = src_location + i;
                     dst_location = dst_location + i;
                 end else begin
-                    fail_message(len_bytes, task_type, src_location, dst_location);
+                    fail_message(len_bytes, task_type, src_location, dst_location,int_mem);
                     src_location = src_location + i;
                     dst_location = dst_location + i;
                 end
             end
         end else if (task_type == 'd2) begin
             for (int i=0; i<(len_bytes/32); i++ ) begin
-                if (int_mem[src_location] === inst_mem.mem_array[dst_location]) begin
+                if (int_mem[src_location] == inst_mem.mem_array[dst_location]) begin
                     pass_message(task_type, len_bytes,i);
                     src_location = src_location + i;
                     dst_location = dst_location + i;
                 end else begin
-                    fail_message(len_bytes, task_type, src_location, dst_location);
+                    fail_message(len_bytes, task_type, src_location, dst_location,int_mem);
                     src_location = src_location + i;
                     dst_location = dst_location + i;
                 end
@@ -117,25 +138,38 @@ task check_data(
             // check the linked task
             $display("Check Linked Task: task type %d",task_type_l);
             check_data(
-				source_addr_l,   //source_addr_o,
-				dest_addr_l,     //dest_addr_o,
+                status_pointer,
+				source_addr_l,   //source_addr,
+				dest_addr_l,     //dest_addr,
                 'd0,             //source_addr_l,
                 'd0,             //dest_addr_l,
                 task_type_l,     //task_type,
 				len_bytes_l,     //len_bytes,
                 'd0,             //task_type_l,
                 'd0,             //len_bytes_l,
-				int_mem         //int_mem
+				int_mem        //int_mem
 			);
         end
+
+        // check the status
+        if (inst_mem.mem_array[status_pointer] == 'd0) begin
+            $display("status pointer updated correctly %d",'d0);
+        end else begin
+            $display("status pointer incorrect ; not %d",'d0);
+        end
+
     end
 endtask
 
+//=======================================================================================
+// PRINT A FAIL MESSAGE (HELPS THE DEBUG)
+//=======================================================================================
 task fail_message(
     input [31:0] len_bytes,
     input [31:0] task_type,
     input [31:0] src_location,
-    input [31:0] dst_location
+    input [31:0] dst_location,
+    input [31:0][7:0][7:0] int_mem
     );
     begin
     $display("test failed: test type %d ; len_bytes %d", task_type, len_bytes);
@@ -145,6 +179,9 @@ task fail_message(
     end
 endtask
 
+//=======================================================================================
+// PRINT A PASS MESSAGE (HELPS CELEBRATE. WOO.)
+//=======================================================================================
 task pass_message(
     input [31:0] task_type,
     input [31:0] len_bytes,
