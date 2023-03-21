@@ -2,18 +2,24 @@ module codma_machine (
         input               clk_i,
         input               reset_n_i,    
         input               start_i,
+        input               stop_i,
         output logic        busy_o,
         output logic        irq_o,
         input [31:0]        task_pointer_i,
+        input [31:0]        status_pointer_i,
         input               read_pkg::read_state_t rd_state_next_s,
-        output              read_pkg::read_state_t rd_state_r,
+        input               read_pkg::read_state_t rd_state_r,
         input               write_pkg::write_state_t wr_state_next_s,
-        output              write_pkg::write_state_t wr_state_r,
         output              dma_pkg::dma_state_t dma_state_r,
         output              dma_pkg::dma_state_t dma_state_next_s,
 
+        // Read Machine Req
         output logic [31:0] reg_addr,
         output logic [7:0]  reg_size,
+
+        // Write Machine Req
+        output logic [31:0] reg_addr_wr,
+        output logic [7:0]  reg_size_wr,
 
         output logic        need_read_i,
         input               need_read_o,
@@ -37,14 +43,14 @@ module codma_machine (
         case(dma_state_r)
             dma_pkg::DMA_IDLE:
             begin
-                if (busy_o) begin
+                if (!busy_o && start_i) begin
                     dma_state_next_s = dma_pkg::DMA_PENDING;
                 end
             end
             dma_pkg::DMA_PENDING:
             begin
-                // once the task has been read from the pointer
-                if (rd_state_next_s == read_pkg::RD_IDLE) begin
+                // once the task has been read from the pointer & status updated
+                if (rd_state_next_s == read_pkg::RD_IDLE && wr_state_next_s == write_pkg::WR_IDLE) begin
                     dma_state_next_s = dma_pkg::DMA_DATA_READ;
                 end
             end
@@ -60,7 +66,13 @@ module codma_machine (
             begin
                 // move operation
                 if (rd_state_next_s == read_pkg::RD_IDLE) begin
-                    dma_state_next_s = dma_pkg::DMA_WRITING;
+                    if (task_type != 'd3) begin
+                        dma_state_next_s = dma_pkg::DMA_WRITING;
+                    end else if (task_type == 'd3) begin
+                        dma_state_next_s = dma_pkg::DMA_COMPUTE;
+                    //end else begin
+                    //    dma_state_next_s = dma_state_r;
+                    end
                 end
             end
 
@@ -83,6 +95,14 @@ module codma_machine (
                 $display("DMA COMPUTE NOT YET DEFINED");
                 dma_state_next_s = dma_pkg::DMA_IDLE;
             end
+
+            dma_pkg::DMA_ERROR:
+            begin
+                // once status has been updated to failed, return to Idle
+                if(wr_state_next_s == write_pkg::WR_IDLE)begin
+                    dma_state_next_s = dma_pkg::DMA_IDLE;
+                end
+            end
         endcase
     end
 
@@ -91,54 +111,82 @@ module codma_machine (
         // RESET CONDITIONS
         //--------------------------------------------------
         if (!reset_n_i) begin
-            rd_state_r          <= read_pkg::RD_IDLE;
-            wr_state_r          <= write_pkg::WR_IDLE;
             dma_state_r         <= dma_pkg::DMA_IDLE;
             busy_o              <= 'd0;
             irq_o               <= 'd0;
             reg_addr            <= 'd0;
             task_dependant_data <= 'd0;
             reg_size            <= 'd0;
+            reg_size_wr         <= 'd0;
             need_read_i         <= 'd0;
             need_write_i        <= 'd0;
             source_addr         <= 'd0;
-            error_flag          <= 'd0;    
+            error_flag          <= 'd0;   
+            task_type           <= 'd0; 
+
+        //--------------------------------------------------
+        // ERROR HANDLING (FROM BUS)
+        //--------------------------------------------------
+        end else if (bus_if.error || stop_i) begin
+            dma_state_r     <= dma_pkg::DMA_ERROR;
+            need_read_i     <= 'd0;
+            need_write_i    <= 'd1;
+            write_data      <= 'd1;
+            reg_size_wr     <= 'd3;
+            reg_addr_wr     <= status_pointer_i;
+
         //--------------------------------------------------
         // RUNTIME OPERATIONS
         //--------------------------------------------------
         end else begin
             // MACHINE STATES
-            rd_state_r  <= rd_state_next_s;
-            wr_state_r  <= wr_state_next_s;
             dma_state_r <= dma_state_next_s;
             need_read_i <= need_read_o;
             need_write_i <= need_write_o;
     
-            // NEW TASK CONDITIONS (DMA_PENDING)
-            if (!busy_o && start_i) begin
-                // SET OUTPUT FLAGS
-                busy_o      <= 'd1;            
-                // READ ADDRESS IN POINTER
-                reg_addr    <= task_pointer_i;
-                task_pointer_s <= task_pointer_i;
-                reg_size    <= 'd9;
-                need_read_i <= 'd1;
-            end
-    
+            
             //------------------------------------------------------------------------
-            // DMA REGISTERS
+            // DMA IDLING
             //------------------------------------------------------------------------
             if (dma_state_next_s == dma_pkg::DMA_IDLE) begin
-                task_type   <= 'd0;
                 destin_addr <= 'd0;
                 len_bytes   <= 'd0;
+                irq_o       <= 'd0;
                 
-                //deassert busy_o
+                //update the pointer (perhaps add an extra state or do this in writing state ?)
                 if (dma_state_r == dma_pkg::DMA_COMPUTE || dma_state_r == dma_pkg::DMA_WRITING) begin
+                    need_write_i    <= 'd1;
+                    write_data      <= 'h0;
+                    reg_size_wr     <= 'd3;
+                    reg_addr_wr     <= status_pointer_i;
+                // Deassert busy and interrupt when done
+                end else if (wr_state_next_s == write_pkg::WR_IDLE && busy_o) begin
+                    irq_o   <= 'd1;
                     busy_o  <= 'd0;
                 end
-    
-            // TASK 2 SPECIFIC STATE
+
+            //------------------------------------------------------------------------
+            // DMA PENDING (update status ; queue a write) ; DMA LAUNCH (READING NEW TASK AT POINTER)
+            //------------------------------------------------------------------------
+            end else if (dma_state_next_s == dma_pkg::DMA_PENDING) begin
+                
+                // When the dma first moves to the pending state
+                if (dma_state_r == dma_pkg::DMA_IDLE) begin
+                busy_o          <= 'd1;            
+                reg_addr        <= task_pointer_i;
+                task_pointer_s  <= task_pointer_i;
+                reg_size        <= 'd9;
+                need_read_i     <= 'd1;
+                // Queue the status write
+                end else if (rd_state_r == read_pkg::RD_GRANTED) begin
+                    need_write_i    <= 'd1;
+                    write_data      <= 'hf;
+                    reg_size_wr     <= 'd3;
+                    reg_addr_wr     <= status_pointer_i;
+                end               
+
+            //------------------------------------------------------------------------
+            // TASK 2 SPECIFIC STATE: READING LAST POINTER + 'd32
             //------------------------------------------------------------------------
             end else if (dma_state_next_s == dma_pkg::DMA_TASK_READ) begin
                 need_read_i     <= 'd1;
@@ -148,7 +196,8 @@ module codma_machine (
                     task_pointer_s  <= task_pointer_s + 'd32;
                 end
 
-            // GATHERING DATA TO TRANSFER
+            //------------------------------------------------------------------------
+            // READING THE INFO AT THE SOURCE ADDR
             //------------------------------------------------------------------------
             end else if (dma_state_next_s == dma_pkg::DMA_DATA_READ) begin
                 
@@ -176,9 +225,9 @@ module codma_machine (
                     // define burst size
                     // function of task type
                     if (data_reg[0] == 'd0) begin
-                        reg_size <= 'd3;
+                        reg_size_wr <= 'd3;
                     end else if (data_reg[0] != 'd0) begin
-                        reg_size <= 'd9;
+                        reg_size_wr <= 'd9;
                     end
                 end
 
@@ -188,31 +237,31 @@ module codma_machine (
                     error_flag <= 'd1;
                     dma_state_r <= dma_pkg::DMA_IDLE;
                 end
-                
+
+            //------------------------------------------------------------------------
+            // PERFORM THE WRITE OPERATION
             //------------------------------------------------------------------------
             end else if (dma_state_next_s == dma_pkg::DMA_WRITING) begin
                 need_write_i <= 'd1;
                 write_data   <= data_reg;
-                reg_addr     <= destin_addr;
+                reg_addr_wr   <= destin_addr;
                 // reg_size stays the same
                 if (wr_state_next_s == write_pkg::WR_IDLE) begin
-                    if (reg_size == 'd3) begin
+                    if (reg_size_wr == 'd3) begin
                         len_bytes <= len_bytes - 'd8;
-                    end else if (reg_size == 'd8) begin
+                    end else if (reg_size_wr == 'd8) begin
                         len_bytes <= len_bytes - 'd16;
-                    end else if (reg_size == 'd9) begin
+                    end else if (reg_size_wr == 'd9) begin
                         len_bytes <= len_bytes - 'd32;
                     end
                 end
+            
+            //------------------------------------------------------------------------
+            // PERFORM THE DMA COMPUTE OPERATION (DIFFERENT MODULE)
             //------------------------------------------------------------------------
             end else if (dma_state_next_s == dma_pkg::DMA_COMPUTE) begin
-                //$display("NO REGISTER OPERATIONS DEFINED FOR THIS TASK TYPE");
-                //compute_crc inst_compute_crc (
-                //    .clk_i(clk_i),
-                //    .reset_n_i(reset_n_i),
-                //    .data_reg(data_reg),
-                //    .crc_output(crc_code)
-                //);
+                need_write_i <= 'd0;
+                need_read_i  <= 'd0;
             end
         end
     end

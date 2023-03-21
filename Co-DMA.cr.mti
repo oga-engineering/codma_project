@@ -13,14 +13,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	--none--
 
-} {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module codma_tb
--- Importing package dma_pkg
-
-Top level modules:
-	codma_tb
-
 } {} {}} top.sv {1 {vlog -work work -sv -stats=none {C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/top.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling package read_pkg
@@ -41,6 +33,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	compute_crc
+
+} {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling package read_pkg
+-- Compiling package write_pkg
+-- Compiling package dma_pkg
+-- Compiling module ip_codma_top
+-- Importing package read_pkg
+-- Importing package write_pkg
+-- Importing package dma_pkg
+
+Top level modules:
+	ip_codma_top
 
 } {} {}} rd_wr_machines.sv {1 {vlog -work work -sv -stats=none {C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/rd_wr_machines.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -72,6 +77,28 @@ These features are only supported in Questasim.
 Top level modules:
 	ip_checker
 
+} {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/compute_crc.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/compute_crc.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module compute_crc
+-- Importing package dma_pkg
+
+Top level modules:
+	compute_crc
+
+} {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/rd_wr_machines.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/rd_wr_machines.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling package read_pkg
+-- Compiling package write_pkg
+-- Compiling package dma_pkg
+-- Compiling module read_machine
+-- Importing package read_pkg
+-- Compiling module write_machine
+-- Importing package write_pkg
+
+Top level modules:
+	read_machine
+	write_machine
+
 } {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_checker.sv {2 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_checker.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ip_checker
@@ -87,20 +114,6 @@ These features are only supported in Questasim.
 
 Top level modules:
 	ip_checker
-
-} {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/rd_wr_machines.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/rd_wr_machines.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling package read_pkg
--- Compiling package write_pkg
--- Compiling package dma_pkg
--- Compiling module read_machine
--- Importing package read_pkg
--- Compiling module write_machine
--- Importing package write_pkg
-
-Top level modules:
-	read_machine
-	write_machine
 
 } {} {}} ip_mem.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_mem.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -126,15 +139,17 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	ip_mem
 
-} {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_machine.sv {0 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_machine.sv
+} {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_machine.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_machine.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module codma_machine
 -- Importing package read_pkg
 -- Importing package write_pkg
 -- Importing package dma_pkg
-** Error: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_machine.sv(106): (vlog-2730) Undefined variable: 'crc_code'.
 
-} {7.0 8.0} {}} bus_interface.sv {1 {vlog -work work -sv -stats=none C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/bus_interface.sv
+Top level modules:
+	codma_machine
+
+} {} {}} bus_interface.sv {1 {vlog -work work -sv -stats=none C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/bus_interface.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling package bus_interface_sv_unit
 -- Compiling interface bus_if

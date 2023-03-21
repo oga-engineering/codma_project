@@ -12,7 +12,7 @@ module compute_crc (
             crc_output <= 'd0;
         end else begin
             if(dma_state_next_s == dma_pkg::DMA_COMPUTE)begin
-                crc_output <= 'd1;
+                crc_output <= 'hf;
             end
         end
     end

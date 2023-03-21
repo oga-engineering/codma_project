@@ -1,3 +1,12 @@
+/*
+Oliver Anderson
+Univeristy of Bath
+codma FYP 2023
+
+Initial testbench provided by Infineon and heavily modified to allow a proof of concept
+simulation of the codma. 
+*/
+
 module codma_tb ();
 `include "tb_tasks.sv"
 //=======================================================================================
@@ -33,6 +42,7 @@ always #2 clk = ~clk;
 //--------------------------------------------------
 
 initial begin
+	status_pointer = 'd0;
 	clk 	= 0;
 	reset_n	= 1;
 	#1
@@ -104,12 +114,6 @@ begin
 //--------------------------------------------------
 	dma_pkg::dma_state_t        dma_state_r;
 	dma_pkg::dma_state_t        dma_state_next_s;
-	bus_if.read		= '0;
-	bus_if.write		= '0;
-	bus_if.addr		= '0;
-	bus_if.size		=  9;
-	bus_if.write_data	= '0;
-	bus_if.write_valid	= '0;
 
 	#40	// wait for reset to finish
 
@@ -132,10 +136,10 @@ if (USE_CODMA) begin
 		// DRIVE THREAD
 		//--------------------------------------------------
 		begin
-			// 8 Bytes chunks
+			//#1 8 Bytes chunks
 			task_type = 'd0;
 			len_bytes = ($urandom_range(1,4)*8);
-			task_pointer = ($urandom_range(0,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
+			task_pointer = ($urandom_range(8,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
 			setup_data(
 				task_pointer,
 				task_type,
@@ -151,14 +155,14 @@ if (USE_CODMA) begin
 			start_s = '1;
 			#50
 			start_s = '0;
-			wait(inst_codma.dma_state_r == dma_pkg::DMA_IDLE);
+			wait(inst_codma.busy_o == 'd0);
 			-> test_done;
 
-			// 32 bytes chunks
+			//#2 32 bytes chunks
 			@(check_done);
 			task_type = 'd1;
 			len_bytes = ($urandom_range(1,3)*32);
-			task_pointer = ($urandom_range(0,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
+			task_pointer = ($urandom_range(8,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
 			setup_data(
 				task_pointer,
 				task_type,
@@ -174,14 +178,14 @@ if (USE_CODMA) begin
 			start_s = '1;
 			#50
 			start_s = '0;
-			wait(inst_codma.dma_state_r == dma_pkg::DMA_IDLE);
+			wait(inst_codma.busy_o == 'd0);
 			-> test_done;
 
-			// 32 bytes chunks ; Move Link
+			//#3 32 bytes chunks ; Move Link
 			@(check_done);
 			task_type = 'd2;
 			len_bytes = ($urandom_range(1,2)*'d32);
-			task_pointer = ($urandom_range(0,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
+			task_pointer = ($urandom_range(8,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
 			setup_data(
 				task_pointer,
 				task_type,
@@ -197,16 +201,53 @@ if (USE_CODMA) begin
 			start_s = '1;
 			#50
 			start_s = '0;
-			wait(inst_codma.dma_state_r == dma_pkg::DMA_IDLE);
+			wait(inst_codma.busy_o == 'd0);
 			-> test_done;
+			
+			//#4 Error Task
+			#50
+			task_type = 'hf;
+			task_pointer = (inst_mem.MEM_DEPTH*inst_mem.MEM_WIDTH);
+			start_s = '1;
+			#50
+			start_s = '0;
+			wait(inst_codma.busy_o == 'd0);
+			-> test_done;
+			
+			
+			//#5 Task Type 3
+			@(check_done);
+			task_type = 'd3;
+			len_bytes = ($urandom_range(1,2)*'d32);
+			task_pointer = ($urandom_range(8,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
+			setup_data(
+				task_pointer,
+				task_type,
+				len_bytes,
+				source_addr_o,
+				dest_addr_o,
+				source_addr_l,
+				dest_addr_l,
+				task_type_l,
+				len_bytes_l,
+				int_mem
+			);
+			start_s = '1;
+			#50
+			start_s = '0;
+			wait(inst_codma.busy_o == 'd0);
+
+			
 		end
 
 		//--------------------------------------------------
 		// VERIFICATION THREAD
 		//--------------------------------------------------
 		begin
+			// Test #1
 			@(test_done)
 			check_data(
+				status_pointer,
 				source_addr_o,
 				dest_addr_o,
 				source_addr_l,
@@ -219,8 +260,10 @@ if (USE_CODMA) begin
 			);
 			-> check_done;
 			
-			@(test_done);
+			// Test #2
+			@(test_done)
 			check_data(
+				status_pointer,
 				source_addr_o,
 				dest_addr_o,
 				source_addr_l,
@@ -233,8 +276,10 @@ if (USE_CODMA) begin
 			);
 			-> check_done;
 
+			// Test #3
 			@(test_done)
 			check_data(
+				status_pointer,
 				source_addr_o,
 				dest_addr_o,
 				source_addr_l,
@@ -245,91 +290,106 @@ if (USE_CODMA) begin
 				len_bytes_l,
 				int_mem
 			);
+			-> check_done;
+
+			// Test #4 - pointer addr does not exist
+			@(test_done)
+				#10
+				$display("//-------------------------------------------------------------------------------------------------------",task_type);
+        		$display("Begin Check: task type %h",task_type);
+				// Check the status output
+				if (inst_mem.mem_array[status_pointer] == 'd1) begin
+					$display("The status correctly reflected this error at the status address %d",(status_pointer/8));
+				end else begin
+					$display("The status did NOT reflect this error at the status address %d",(status_pointer/8));
+				end
+			-> check_done;
+
 		end
 	join
-	#50
+	#70
 	$display("TESTS PASS!");
 	$stop;
 end
 
 
-if (EXAMPLE_PRESET) begin
-	//--------------------------------------------------
-	// 1 Double Word Write Error Example 
-	//--------------------------------------------------
-
-		#50								// spaceing to seperate examples
-
-		@(negedge clk);
-		bus_if.write	= '1;						// send write request on bus_if
-		bus_if.addr	= (inst_mem.MEM_DEPTH*inst_mem.MEM_WIDTH);	// address is the size of memory which does not exist
-		bus_if.size	= 3;						// size is 3 (1 double word)
-
-		@(negedge (bus_if.grant));
-		bus_if.write	= '0;						// when grant detected, de-assert write request
-
-		// ip_mem will error 1 cycle after grant in data phase 
-
-	//--------------------------------------------------
-	// 2 Double Word Read Burst Example 
-	//--------------------------------------------------
-
-		#50								// spaceing to seperate examples
-
-		@(negedge clk);
-		bus_if.read	= '1;						// send read request on bus_if
-		bus_if.addr	= 0;						// address is 0 (1st double word of memory)
-		bus_if.size	= 8;						// size is 8 (2 double word burst)
-
-		@(negedge (bus_if.grant));
-		bus_if.read	= '0;						// when grant detected, de-assert read request
-
-		// ip_mem will provide a read_valid along with the data in the first and second double words of memory (address 0 and 8). Check this in the waveforms.
-
-	//--------------------------------------------------
-	// 4 Double Word Write Burst Example 
-	//--------------------------------------------------
-
-		#50								// spaceing to seperate examples
-
-		@(negedge clk);
-		bus_if.write	= '1;						// send write request on bus_if
-		bus_if.addr	= 32;						// address is 32 (5th double word of memory)
-		bus_if.size	= 9;						// size is 9 (4 double word burst)
-
-		@(negedge (bus_if.grant));
-		bus_if.write	= '0;						// when grant detected, de-assert write request
-
-		@(negedge clk);
-		bus_if.write_valid	= '1;					// write data is valid
-		bus_if.write_data	= 64'h000000000000ffff;			// ip_mem will take this data and put it in 5th double word of memory
-
-		@(negedge clk);
-		bus_if.write_valid	= '0;					// write data is not valid, ip_mem will ignore write_data on this cycle
-
-		@(negedge clk);
-		bus_if.write_valid	= '1;					// write data is valid
-		bus_if.write_data	= 64'h00000000ffffffff;			// ip_mem will take this data and put it in 6th double word of memory
-
-		@(negedge clk);
-		bus_if.write_valid	= '0;					// write data is not valid, ip_mem will ignore write_data on this cycle
-
-		@(negedge clk);
-		bus_if.write_valid	= '1;					// write data is valid
-		bus_if.write_data	= 64'h0000ffffffffffff;			// ip_mem will take this data and put it in 7th double word of memory
-
-		@(negedge clk);
-		bus_if.write_valid	= '0;					// write data is not valid, ip_mem will ignore write_data on this cycle
-
-		@(negedge clk);
-		bus_if.write_valid	= '1;					// write data is valid
-		bus_if.write_data	= 64'hffffffffffffffff;			// ip_mem will take this data and put it in 8th double word of memory
-
-		@(negedge clk);
-		bus_if.write_valid	= '0;					// write data is not valid, ip_mem will ignore write_data on this cycle
-
-		// check the  memory in waveforms to see if this data has correctly written to it
-	end
+//if (EXAMPLE_PRESET) begin
+//	//--------------------------------------------------
+//	// 1 Double Word Write Error Example 
+//	//--------------------------------------------------
+//
+//		#50								// spaceing to seperate examples
+//
+//		@(negedge clk);
+//		bus_if.write	= '1;						// send write request on bus_if
+//		bus_if.addr	= (inst_mem.MEM_DEPTH*inst_mem.MEM_WIDTH);	// address is the size of memory which does not exist
+//		bus_if.size	= 3;						// size is 3 (1 double word)
+//
+//		@(negedge (bus_if.grant));
+//		bus_if.write	= '0;						// when grant detected, de-assert write request
+//
+//		// ip_mem will error 1 cycle after grant in data phase 
+//
+//	//--------------------------------------------------
+//	// 2 Double Word Read Burst Example 
+//	//--------------------------------------------------
+//
+//		#50								// spaceing to seperate examples
+//
+//		@(negedge clk);
+//		bus_if.read	= '1;						// send read request on bus_if
+//		bus_if.addr	= 0;						// address is 0 (1st double word of memory)
+//		bus_if.size	= 8;						// size is 8 (2 double word burst)
+//
+//		@(negedge (bus_if.grant));
+//		bus_if.read	= '0;						// when grant detected, de-assert read request
+//
+//		// ip_mem will provide a read_valid along with the data in the first and second double words of memory (address 0 and 8). Check this in the waveforms.
+//
+//	//--------------------------------------------------
+//	// 4 Double Word Write Burst Example 
+//	//--------------------------------------------------
+//
+//		#50								// spaceing to seperate examples
+//
+//		@(negedge clk);
+//		bus_if.write	= '1;						// send write request on bus_if
+//		bus_if.addr	= 32;						// address is 32 (5th double word of memory)
+//		bus_if.size	= 9;						// size is 9 (4 double word burst)
+//
+//		@(negedge (bus_if.grant));
+//		bus_if.write	= '0;						// when grant detected, de-assert write request
+//
+//		@(negedge clk);
+//		bus_if.write_valid	= '1;					// write data is valid
+//		bus_if.write_data	= 64'h000000000000ffff;			// ip_mem will take this data and put it in 5th double word of memory
+//
+//		@(negedge clk);
+//		bus_if.write_valid	= '0;					// write data is not valid, ip_mem will ignore write_data on this cycle
+//
+//		@(negedge clk);
+//		bus_if.write_valid	= '1;					// write data is valid
+//		bus_if.write_data	= 64'h00000000ffffffff;			// ip_mem will take this data and put it in 6th double word of memory
+//
+//		@(negedge clk);
+//		bus_if.write_valid	= '0;					// write data is not valid, ip_mem will ignore write_data on this cycle
+//
+//		@(negedge clk);
+//		bus_if.write_valid	= '1;					// write data is valid
+//		bus_if.write_data	= 64'h0000ffffffffffff;			// ip_mem will take this data and put it in 7th double word of memory
+//
+//		@(negedge clk);
+//		bus_if.write_valid	= '0;					// write data is not valid, ip_mem will ignore write_data on this cycle
+//
+//		@(negedge clk);
+//		bus_if.write_valid	= '1;					// write data is valid
+//		bus_if.write_data	= 64'hffffffffffffffff;			// ip_mem will take this data and put it in 8th double word of memory
+//
+//		@(negedge clk);
+//		bus_if.write_valid	= '0;					// write data is not valid, ip_mem will ignore write_data on this cycle
+//
+//		// check the  memory in waveforms to see if this data has correctly written to it
+//	end
 end
 
 //=======================================================================================
