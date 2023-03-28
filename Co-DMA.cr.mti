@@ -5,10 +5,33 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	--none--
 
+} {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_mem_pipelined.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_mem_pipelined.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ip_mem_pipelined
+
+Top level modules:
+	ip_mem_pipelined
+
 } {} {}} move_func.sv {1 {vlog -work work -sv -stats=none C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/move_func.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling package move_func_sv_unit
 -- Compiling interface bus_if
+
+Top level modules:
+	--none--
+
+} {} {}} ip_codma_crc.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_codma_crc.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling package ip_codma_crc_sv_unit
+-- Importing package ip_codma_machine_states_pkg
+-- Compiling module ip_codma_crc
+
+Top level modules:
+	ip_codma_crc
+
+} {} {}} ip_codma_machine_states.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_codma_machine_states.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling package ip_codma_machine_states_pkg
 
 Top level modules:
 	--none--
@@ -26,6 +49,15 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	ip_codma_top
 
+} {} {}} ip_codma_main_machine.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_codma_main_machine.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling package ip_codma_main_machine_sv_unit
+-- Importing package ip_codma_machine_states_pkg
+-- Compiling module ip_codma_main_machine
+
+Top level modules:
+	ip_codma_main_machine
+
 } {} {}} compute_crc.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/compute_crc.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module compute_crc
@@ -33,19 +65,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	compute_crc
-
-} {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling package read_pkg
--- Compiling package write_pkg
--- Compiling package dma_pkg
--- Compiling module ip_codma_top
--- Importing package read_pkg
--- Importing package write_pkg
--- Importing package dma_pkg
-
-Top level modules:
-	ip_codma_top
 
 } {} {}} rd_wr_machines.sv {1 {vlog -work work -sv -stats=none {C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/rd_wr_machines.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -77,27 +96,12 @@ These features are only supported in Questasim.
 Top level modules:
 	ip_checker
 
-} {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/compute_crc.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/compute_crc.sv
+} {} {}} ip_mem.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_mem.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module compute_crc
--- Importing package dma_pkg
+-- Compiling module ip_mem
 
 Top level modules:
-	compute_crc
-
-} {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/rd_wr_machines.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/rd_wr_machines.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling package read_pkg
--- Compiling package write_pkg
--- Compiling package dma_pkg
--- Compiling module read_machine
--- Importing package read_pkg
--- Compiling module write_machine
--- Importing package write_pkg
-
-Top level modules:
-	read_machine
-	write_machine
+	ip_mem
 
 } {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_checker.sv {2 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_checker.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -115,12 +119,16 @@ These features are only supported in Questasim.
 Top level modules:
 	ip_checker
 
-} {} {}} ip_mem.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_mem.sv
+} {} {}} ip_codma_rd_wr_machines.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_codma_rd_wr_machines.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ip_mem
+-- Compiling package ip_codma_rd_wr_machines_sv_unit
+-- Importing package ip_codma_machine_states_pkg
+-- Compiling module ip_codma_read_machine
+-- Compiling module ip_codma_write_machine
 
 Top level modules:
-	ip_mem
+	ip_codma_read_machine
+	ip_codma_write_machine
 
 } {} {}} codma_machine.sv {1 {vlog -work work -sv -stats=none {C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/codma_machine.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -139,20 +147,17 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	ip_mem
 
-} {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_machine.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_machine.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module codma_machine
--- Importing package read_pkg
--- Importing package write_pkg
--- Importing package dma_pkg
-
-Top level modules:
-	codma_machine
-
 } {} {}} bus_interface.sv {1 {vlog -work work -sv -stats=none C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/bus_interface.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling package bus_interface_sv_unit
 -- Compiling interface bus_if
+
+Top level modules:
+	--none--
+
+} {} {}} tb_tasks.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/tb_tasks.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling package tb_tasks_pkg
 
 Top level modules:
 	--none--
@@ -164,11 +169,27 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	--none--
 
+} {} {}} ip_codma_top.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_codma_top.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling package ip_codma_top_sv_unit
+-- Importing package ip_codma_machine_states_pkg
+-- Compiling module ip_codma_top
+
+Top level modules:
+	ip_codma_top
+
 } {} {}} ip_codma_interfaces.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_codma_interfaces.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling interface BUS_IF
 
 Top level modules:
 	--none--
+
+} {} {}} ip_mem_pipelined.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_mem_pipelined.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ip_mem_pipelined
+
+Top level modules:
+	ip_mem_pipelined
 
 } {} {}}

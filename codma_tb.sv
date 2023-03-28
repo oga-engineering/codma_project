@@ -7,8 +7,12 @@ Initial testbench provided by Infineon and heavily modified to allow a proof of 
 simulation of the codma. 
 */
 
+
 module codma_tb ();
-`include "tb_tasks.sv"
+
+import machine_states_pkg::*;
+import tb_tasks_pkg::* ;
+
 //=======================================================================================
 // Local Signal Definition
 //=======================================================================================
@@ -47,9 +51,10 @@ initial begin
 	reset_n	= 1;
 	#1
 	reset_n	= 0;
+	stop_s = '0;
 	#30
 	reset_n	= 1;
-	#2000
+	#7000
 	$display("Test Hanging");
 	$stop;
 end
@@ -82,7 +87,7 @@ ip_codma_top inst_codma (
 // Memory Instantiation
 //--------------------------------------------------
 
-ip_mem #(
+ip_mem_pipelined #(
 	.MEM_DEPTH	(32),
 	.MEM_WIDTH	(8)
 ) inst_mem (
@@ -112,8 +117,8 @@ begin
 //--------------------------------------------------
 // Set Default Values
 //--------------------------------------------------
-	dma_pkg::dma_state_t        dma_state_r;
-	dma_pkg::dma_state_t        dma_state_next_s;
+	dma_state_t        dma_state_r;
+	dma_state_t        dma_state_next_s;
 
 	#40	// wait for reset to finish
 
@@ -130,17 +135,20 @@ begin
 //--------------------------------------------------
 // Co-DMA stimulus
 //--------------------------------------------------
-if (USE_CODMA) begin
-	fork
-		//--------------------------------------------------
-		// DRIVE THREAD
-		//--------------------------------------------------
-		begin
-			//#1 8 Bytes chunks
-			task_type = 'd0;
-			len_bytes = ($urandom_range(1,4)*8);
-			task_pointer = ($urandom_range(8,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
-			setup_data(
+for (int i=0; i<5; i++) begin
+	if (USE_CODMA) begin
+		fork
+			//--------------------------------------------------
+			// DRIVE THREAD
+			//--------------------------------------------------
+			begin
+				//#1 8 Bytes chunks
+				task_type = 'd0;
+				len_bytes = ($urandom_range(1,4)*8);
+				task_pointer = ($urandom_range(8,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
+				setup_data(
+				inst_mem.mem_array,
+				inst_mem.mem_array,
 				task_pointer,
 				task_type,
 				len_bytes,
@@ -158,12 +166,14 @@ if (USE_CODMA) begin
 			wait(inst_codma.busy_o == 'd0);
 			-> test_done;
 
-			//#2 32 bytes chunks
-			@(check_done);
-			task_type = 'd1;
-			len_bytes = ($urandom_range(1,3)*32);
-			task_pointer = ($urandom_range(8,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
-			setup_data(
+				//#2 32 bytes chunks
+				@(check_done);
+				task_type = 'd1;
+				len_bytes = ($urandom_range(1,3)*32);
+				task_pointer = ($urandom_range(8,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
+				setup_data(
+				inst_mem.mem_array,
+				inst_mem.mem_array,
 				task_pointer,
 				task_type,
 				len_bytes,
@@ -181,12 +191,14 @@ if (USE_CODMA) begin
 			wait(inst_codma.busy_o == 'd0);
 			-> test_done;
 
-			//#3 32 bytes chunks ; Move Link
-			@(check_done);
-			task_type = 'd2;
-			len_bytes = ($urandom_range(1,2)*'d32);
-			task_pointer = ($urandom_range(8,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
-			setup_data(
+				//#3 32 bytes chunks ; Move Link
+				@(check_done);
+				task_type = 'd2;
+				len_bytes = ($urandom_range(1,2)*'d32);
+				task_pointer = ($urandom_range(8,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
+				setup_data(
+				inst_mem.mem_array,
+				inst_mem.mem_array,
 				task_pointer,
 				task_type,
 				len_bytes,
@@ -221,6 +233,8 @@ if (USE_CODMA) begin
 			len_bytes = ($urandom_range(1,2)*'d32);
 			task_pointer = ($urandom_range(8,(inst_mem.MEM_DEPTH-4))*inst_mem.MEM_WIDTH);
 			setup_data(
+				inst_mem.mem_array,
+				inst_mem.mem_array,
 				task_pointer,
 				task_type,
 				len_bytes,
@@ -237,81 +251,100 @@ if (USE_CODMA) begin
 			start_s = '0;
 			wait(inst_codma.busy_o == 'd0);
 
-			
-		end
 
-		//--------------------------------------------------
-		// VERIFICATION THREAD
-		//--------------------------------------------------
-		begin
-			// Test #1
-			@(test_done)
-			check_data(
-				status_pointer,
-				source_addr_o,
-				dest_addr_o,
-				source_addr_l,
-				dest_addr_l,
-				task_type,
-				len_bytes,
-				task_type_l,
-				len_bytes_l,
-				int_mem
-			);
-			-> check_done;
-			
-			// Test #2
-			@(test_done)
-			check_data(
-				status_pointer,
-				source_addr_o,
-				dest_addr_o,
-				source_addr_l,
-				dest_addr_l,
-				task_type,
-				len_bytes,
-				task_type_l,
-				len_bytes_l,
-				int_mem
-			);
-			-> check_done;
+			end
 
-			// Test #3
-			@(test_done)
-			check_data(
-				status_pointer,
-				source_addr_o,
-				dest_addr_o,
-				source_addr_l,
-				dest_addr_l,
-				task_type,
-				len_bytes,
-				task_type_l,
-				len_bytes_l,
-				int_mem
-			);
-			-> check_done;
+			//--------------------------------------------------
+			// VERIFICATION THREAD
+			//--------------------------------------------------
+			begin
+				// Test #1
+				@(test_done)
+				check_data(
+				inst_mem.mem_array,
+					status_pointer,
+					source_addr_o,
+					dest_addr_o,
+					source_addr_l,
+					dest_addr_l,
+					task_type,
+					len_bytes,
+					task_type_l,
+					len_bytes_l,
+					int_mem
+				);
+				-> check_done;
 
-			// Test #4 - pointer addr does not exist
-			@(test_done)
-				#10
-				$display("//-------------------------------------------------------------------------------------------------------",task_type);
-        		$display("Begin Check: task type %h",task_type);
-				// Check the status output
-				if (inst_mem.mem_array[status_pointer] == 'd1) begin
-					$display("The status correctly reflected this error at the status address %d",(status_pointer/8));
-				end else begin
-					$display("The status did NOT reflect this error at the status address %d",(status_pointer/8));
-				end
-			-> check_done;
+				// Test #2
+				@(test_done)
+				check_data(
+				inst_mem.mem_array,
+					status_pointer,
+					source_addr_o,
+					dest_addr_o,
+					source_addr_l,
+					dest_addr_l,
+					task_type,
+					len_bytes,
+					task_type_l,
+					len_bytes_l,
+					int_mem
+				);
+				-> check_done;
 
-		end
-	join
-	#70
-	$display("TESTS PASS!");
-	$stop;
+				// Test #3
+				@(test_done)
+				check_data(
+				inst_mem.mem_array,
+					status_pointer,
+					source_addr_o,
+					dest_addr_o,
+					source_addr_l,
+					dest_addr_l,
+					task_type,
+					len_bytes,
+					task_type_l,
+					len_bytes_l,
+					int_mem
+				);
+				-> check_done;
+
+				// Test #4 - pointer addr does not exist
+				@(test_done)
+					#10
+					$display("//-------------------------------------------------------------------------------------------------------",task_type);
+	        		$display("Begin Check: task type %h",task_type);
+					// Check the status output
+					if (inst_mem.mem_array[status_pointer] == 'd1) begin
+						$display("The status correctly reflected this error at the status address %d",(status_pointer/8));
+					end else begin
+						$display("The status did NOT reflect this error at the status address %d",(status_pointer/8));
+					end
+				-> check_done;
+
+			end
+		join
+		#20
+		$display("TESTS SEQUENCE ONE PASS!");
+
+		start_s = '1;
+		#50
+		start_s = '0;
+		#20
+		stop_s = '1;
+		#10
+		stop_s = '0;
+		#10
+		$display("done %d",'d0);
+
+		// Setup a new test strategy here for the error handling
+		//$display("putting each state machine into unused states");
+		//inst_codma.dma_state_r = DMA_UNUSED;
+		//#20
+
+	end
 end
-
+$stop;
 
 //if (EXAMPLE_PRESET) begin
 //	//--------------------------------------------------
