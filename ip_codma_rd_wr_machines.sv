@@ -74,7 +74,7 @@ module ip_codma_read_machine (
     //--------------------------------------------------
     // REGISTER OPERATIONS
     //--------------------------------------------------
-    always_ff @(posedge clk_i, reset_n_i) begin
+    always_ff @(posedge clk_i, negedge reset_n_i) begin
         if (!reset_n_i) begin
             rd_state_error <= 'd0;
             need_read_o   <= 'd0;
@@ -182,7 +182,7 @@ module ip_codma_write_machine(
     //--------------------------------------------------
     // REGISTER OPERATIONS
     //--------------------------------------------------
-    always_ff @(posedge clk_i, reset_n_i) begin
+    always_ff @(posedge clk_i, negedge reset_n_i) begin
         if (!reset_n_i) begin
             need_write_o    <= 'd0;
             wr_state_error  <= 'd0;

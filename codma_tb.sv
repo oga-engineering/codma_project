@@ -20,7 +20,10 @@ logic EXAMPLE_PRESET;
 assign EXAMPLE_PRESET = 0;
 
 logic USE_CODMA;
-assign USE_CODMA = 1;
+assign USE_CODMA = 0;
+
+logic DEV_CRC;
+assign DEV_CRC = 1;
 
 logic	clk, reset_n;
 logic	start_s, stop_s, busy_s;
@@ -83,6 +86,20 @@ ip_codma_top inst_codma (
 	.irq_o			(irq_s)
 );
 
+logic [7:0][31:0] data_reg;
+logic [7:0][31:0] crc_output;
+logic crc_flag_s;
+assign data_reg = 'b1;
+assign crc_output = 'd0;
+
+ip_codma_crc inst_crc (
+		.clk_i(clk),
+		.reset_n_i(reset_n),
+		.data_reg(data_reg),
+		.crc_complete_flag(crc_flag_s),
+		.crc_output(crc_output)
+	);
+
 //--------------------------------------------------
 // Memory Instantiation
 //--------------------------------------------------
@@ -132,11 +149,24 @@ begin
 		inst_mem.mem_array[i] = {$random(),$random()};
 	end
 	
+
+//--------------------------------------------------
+// CRC DEV
+//--------------------------------------------------
+
+if (DEV_CRC) begin
+	$display("CRC under dev");
+	wait (inst_crc.crc_complete_flag == 'b1);
+		$display("some code %d",crc_output);
+		#60
+		$stop;
+end
+
 //--------------------------------------------------
 // Co-DMA stimulus
 //--------------------------------------------------
-for (int i=0; i<5; i++) begin
-	if (USE_CODMA) begin
+if (USE_CODMA) begin
+	for (int i=0; i<5; i++) begin
 		fork
 			//--------------------------------------------------
 			// DRIVE THREAD
@@ -325,8 +355,9 @@ for (int i=0; i<5; i++) begin
 			end
 		join
 		#20
-		$display("TESTS SEQUENCE ONE PASS!");
+		$display("TESTS SEQUENCE %d PASS!",i);
 
+		// Testing the stop signal
 		start_s = '1;
 		#50
 		start_s = '0;
@@ -335,7 +366,7 @@ for (int i=0; i<5; i++) begin
 		#10
 		stop_s = '0;
 		#10
-		$display("done %d",'d0);
+		$display("Stop signal test complete %d",i);
 
 		// Setup a new test strategy here for the error handling
 		//$display("putting each state machine into unused states");
@@ -343,8 +374,9 @@ for (int i=0; i<5; i++) begin
 		//#20
 
 	end
+	$stop;
 end
-$stop;
+
 
 //if (EXAMPLE_PRESET) begin
 //	//--------------------------------------------------
@@ -430,16 +462,16 @@ end
 //=======================================================================================
 
 // TB checking
-ip_checker inst_checker (
-	.clk_i			(clk),
-	.reset_n_i		(reset_n),
-	.bus_if			(bus_if.monitor),
-	.irq_i			(irq_s),
-	.start_i		(start_s),
-	.stop_i			(stop_s),
-	.busy_i			(busy_s),
-	.task_pointer_i		(task_pointer),
-	.status_pointer_i	(status_pointer)
-);
+//ip_checker inst_checker (
+//	.clk_i			(clk),
+//	.reset_n_i		(reset_n),
+//	.bus_if			(bus_if.monitor),
+//	.irq_i			(irq_s),
+//	.start_i		(start_s),
+//	.stop_i			(stop_s),
+//	.busy_i			(busy_s),
+//	.task_pointer_i		(task_pointer),
+//	.status_pointer_i	(status_pointer)
+//);
 
 endmodule

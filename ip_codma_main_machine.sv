@@ -146,7 +146,7 @@ module ip_codma_main_machine (
         endcase
     end
 
-    always_ff @(posedge clk_i, reset_n_i) begin
+    always_ff @(posedge clk_i, negedge reset_n_i) begin
         //--------------------------------------------------
         // RESET CONDITIONS
         //--------------------------------------------------
