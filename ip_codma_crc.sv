@@ -9,9 +9,10 @@ module ip_codma_crc (
     );
 
     // Create or use input for generator polynomial: x^16 + x^15 + x^2 + 1 (also known as CRC-16-CCITT).
-    logic [15:0] generator_polynomial;
-    assign generator_polynomial = 'b0101010101010101;
-    
+    logic [16:0] generator_polynomial;
+    //assign generator_polynomial = 'b0101010101010101;
+    assign generator_polynomial   = 'b11000000000100001;
+
     // Dev purposes test message
     logic [15:0] test_msg;
     //assign test_msg = 'b11000010;
@@ -45,7 +46,7 @@ module ip_codma_crc (
             crc_complete_flag   <= 'd0;
             crc_result          <= 'd0;
             index               <= 'd31;
-            shift_reg           <= 'b11111111111111111;
+            shift_reg           <= 'd0;
         end else begin
 
             // In operation
@@ -58,19 +59,19 @@ module ip_codma_crc (
                 effective and easier way than this ?  
                 Binary Rep: 0101010101010101
                 */
-                if (shift_reg[0] == 'b1) begin
-                    shift_reg[14] <= shift_reg[14] ^ 'b1;
-                    shift_reg[12] <= shift_reg[12] ^ 'b1; 
-                    shift_reg[10] <= shift_reg[10] ^ 'b1; 
-                    shift_reg[8]  <= shift_reg[8] ^ 'b1; 
-                    shift_reg[6]  <= shift_reg[6] ^ 'b1;
-                    shift_reg[4]  <= shift_reg[4] ^ 'b1;
-                    shift_reg[2]  <= shift_reg[2] ^ 'b1;
+                if (shift_reg[16] == 'b1) begin
+                    shift_reg[16] <= shift_reg[16] ^ 'b1;
+                    shift_reg[15] <= shift_reg[15] ^ 'b1; 
+                    shift_reg[2]  <= shift_reg[2] ^ 'b1; 
                     shift_reg[0]  <= shift_reg[0] ^ 'b1; 
+                    //shift_reg[6]  <= shift_reg[6] ^ 'b1;
+                    //shift_reg[4]  <= shift_reg[4] ^ 'b1;
+                    //shift_reg[2]  <= shift_reg[2] ^ 'b1;
+                    //shift_reg[0]  <= shift_reg[0] ^ 'b1; 
                 end else begin
                     // Shift register
-                    shift_reg <= shift_reg >> 1;
-                    shift_reg[16] <= codeword[index];
+                    shift_reg <= shift_reg << 1;
+                    shift_reg[0] <= codeword[index];
                     index <= index - 1;
                 end
             

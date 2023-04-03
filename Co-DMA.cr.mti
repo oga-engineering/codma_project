@@ -76,6 +76,22 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	compute_crc
 
+} {} {}} ip_checker.sv {2 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_checker.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ip_checker
+** Warning: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_checker.sv(31): (vlog-2186) SystemVerilog testbench feature
+(randomization, coverage or assertion) detected in the design.
+These features are only supported in Questasim.
+** Warning: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_checker.sv(31): (vlog-2186) SystemVerilog testbench feature
+(randomization, coverage or assertion) detected in the design.
+These features are only supported in Questasim.
+** Warning: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_checker.sv(38): (vlog-2186) SystemVerilog testbench feature
+(randomization, coverage or assertion) detected in the design.
+These features are only supported in Questasim.
+
+Top level modules:
+	ip_checker
+
 } {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_codma_machine_states.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_codma_machine_states.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling package ip_codma_machine_states_pkg
@@ -97,22 +113,6 @@ Top level modules:
 	read_machine
 	write_machine
 
-} {} {}} ip_checker.sv {2 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_checker.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ip_checker
-** Warning: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_checker.sv(31): (vlog-2186) SystemVerilog testbench feature
-(randomization, coverage or assertion) detected in the design.
-These features are only supported in Questasim.
-** Warning: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_checker.sv(31): (vlog-2186) SystemVerilog testbench feature
-(randomization, coverage or assertion) detected in the design.
-These features are only supported in Questasim.
-** Warning: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_checker.sv(38): (vlog-2186) SystemVerilog testbench feature
-(randomization, coverage or assertion) detected in the design.
-These features are only supported in Questasim.
-
-Top level modules:
-	ip_checker
-
 } {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_codma_main_machine.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_codma_main_machine.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling package ip_codma_main_machine_sv_unit
@@ -121,6 +121,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	ip_codma_main_machine
+
+} {} {}} ip_mem.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_mem.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ip_mem
+
+Top level modules:
+	ip_mem
 
 } {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_checker.sv {2 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_checker.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -138,23 +145,6 @@ These features are only supported in Questasim.
 Top level modules:
 	ip_checker
 
-} {} {}} ip_mem.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_mem.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ip_mem
-
-Top level modules:
-	ip_mem
-
-} {} {}} codma_machine.sv {1 {vlog -work work -sv -stats=none {C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/codma_machine.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module codma_machine
--- Importing package read_pkg
--- Importing package write_pkg
--- Importing package dma_pkg
-
-Top level modules:
-	codma_machine
-
 } {} {}} ip_codma_rd_wr_machines.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_codma_rd_wr_machines.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling package ip_codma_rd_wr_machines_sv_unit
@@ -166,12 +156,30 @@ Top level modules:
 	ip_codma_read_machine
 	ip_codma_write_machine
 
+} {} {}} codma_machine.sv {1 {vlog -work work -sv -stats=none {C:/Users/oliver anderson/OneDrive/Documents/Engineering/University/CoDMA_git/codma_machine.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module codma_machine
+-- Importing package read_pkg
+-- Importing package write_pkg
+-- Importing package dma_pkg
+
+Top level modules:
+	codma_machine
+
 } {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_mem.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_mem.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ip_mem
 
 Top level modules:
 	ip_mem
+
+} {} {}} bus_interface.sv {1 {vlog -work work -sv -stats=none C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/bus_interface.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling package bus_interface_sv_unit
+-- Compiling interface bus_if
+
+Top level modules:
+	--none--
 
 } {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_codma_rd_wr_machines.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_codma_rd_wr_machines.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -183,14 +191,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	ip_codma_read_machine
 	ip_codma_write_machine
-
-} {} {}} bus_interface.sv {1 {vlog -work work -sv -stats=none C:/Users/ollie/OneDrive/Documents/Engineering/University/CoDMA_git/bus_interface.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling package bus_interface_sv_unit
--- Compiling interface bus_if
-
-Top level modules:
-	--none--
 
 } {} {}} tb_tasks.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/tb_tasks.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -229,6 +229,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	--none--
 
+} {} {}} ip_mem_pipelined.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_mem_pipelined.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ip_mem_pipelined
+
+Top level modules:
+	ip_mem_pipelined
+
 } {} {}} C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_codma_top.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_codma_top.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling package ip_codma_top_sv_unit
@@ -237,12 +244,5 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	ip_codma_top
-
-} {} {}} ip_mem_pipelined.sv {1 {vlog -work work -sv -stats=none C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/ip_mem_pipelined.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ip_mem_pipelined
-
-Top level modules:
-	ip_mem_pipelined
 
 } {} {}}
