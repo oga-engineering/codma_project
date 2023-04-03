@@ -1,1841 +1,269 @@
-# Compile of top.sv failed with 1 errors.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
 # Compile of ip_mem.sv was successful.
 # Compile of ip_checker.sv was successful with warnings.
 # Compile of codma_tb.sv was successful.
 # Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 1 failed with 1 error.
-# Compile of top.sv was successful with warnings.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
+# Compile of ip_mem_pipelined.sv was successful.
+# Compile of ip_codma_top.sv was successful.
+# Compile of ip_codma_machine_states.sv was successful.
+# Compile of tb_tasks.sv was successful.
+# Compile of ip_codma_crc.sv was successful.
+# Compile of ip_codma_main_machine.sv was successful.
+# Compile of ip_codma_rd_wr_machines.sv was successful.
+# 11 compiles, 0 failed with no errors.
 vsim -gui work.codma_tb
 # vsim -gui work.codma_tb 
-# Start time: 09:06:21 on Mar 21,2023
+# Start time: 09:22:47 on Apr 03,2023
 # Loading sv_std.std
-# Loading work.dma_pkg
+# Loading work.tb_tasks_pkg
+# Loading work.machine_states_pkg
 # Loading work.codma_tb
 # Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
+# Loading work.ip_codma_machine_states_pkg
+# Loading work.ip_codma_top_sv_unit
 # Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-# ** Warning: (vsim-8311) System Verilog assertions are supported only in Questasim.
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_data' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/rd_wr_machines.sv(141).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb/inst_codma File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv Line: 111
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 374
-# ** Error (suppressible): (vsim-7061) Variable '/codma_tb/bus_if/write_data' driven in an always_ff block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/rd_wr_machines.sv(141).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 371
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 370
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 367
-# ** Error (suppressible): (vsim-7061) Variable '/codma_tb/bus_if/write_data' driven in an always_ff block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/rd_wr_machines.sv(141).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 364
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 363
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 360
-# ** Error (suppressible): (vsim-7061) Variable '/codma_tb/bus_if/write_data' driven in an always_ff block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/rd_wr_machines.sv(141).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 357
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 356
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 353
-# ** Error (suppressible): (vsim-7061) Variable '/codma_tb/bus_if/write_data' driven in an always_ff block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/rd_wr_machines.sv(141).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 350
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 349
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(121).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 346
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/size' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(122).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 343
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/addr' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(123).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 342
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(121).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 341
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/read' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(116).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 330
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/size' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(122).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 327
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/addr' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(123).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 326
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/read' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(116).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 325
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(121).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 314
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/size' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(122).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 311
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/addr' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(123).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 310
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(121).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 309
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 113
-# ** Error (suppressible): (vsim-7061) Variable '/codma_tb/bus_if/write_data' driven in an always_ff block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/rd_wr_machines.sv(141).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 112
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/size' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(122).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 111
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/addr' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(123).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 110
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(121).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 109
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/read' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(116).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 108
-# Error loading design
-# End time: 09:06:21 on Mar 21,2023, Elapsed time: 0:00:00
-# Errors: 31, Warnings: 4
-# Compile of top.sv was successful with warnings.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
+# Loading work.ip_codma_rd_wr_machines_sv_unit
+# Loading work.ip_codma_read_machine
+# Loading work.ip_codma_write_machine
+# Loading work.ip_codma_main_machine_sv_unit
+# Loading work.ip_codma_main_machine
+# Loading work.ip_codma_crc_sv_unit
+# Loading work.ip_codma_crc
+# Loading work.ip_mem_pipelined
 # Compile of ip_mem.sv was successful.
 # Compile of ip_checker.sv was successful with warnings.
 # Compile of codma_tb.sv was successful.
 # Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-vsim -gui work.codma_tb
-# vsim -gui work.codma_tb 
-# Start time: 09:07:32 on Mar 21,2023
-# Loading sv_std.std
-# Loading work.dma_pkg
+# Compile of ip_mem_pipelined.sv was successful.
+# Compile of ip_codma_top.sv was successful.
+# Compile of ip_codma_machine_states.sv was successful.
+# Compile of tb_tasks.sv was successful.
+# Compile of ip_codma_crc.sv was successful.
+# Compile of ip_codma_main_machine.sv was successful.
+# Compile of ip_codma_rd_wr_machines.sv was successful.
+# 11 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_tasks_pkg
 # Loading work.codma_tb
 # Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
+# Loading work.ip_codma_machine_states_pkg
+# Loading work.ip_codma_top_sv_unit
 # Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-# ** Warning: (vsim-8311) System Verilog assertions are supported only in Questasim.
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 374
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_data' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(111).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 371
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 370
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 367
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_data' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(111).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 364
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 363
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 360
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_data' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(111).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 357
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 356
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 353
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_data' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(111).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 350
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 349
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(121).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 346
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/size' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(122).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 343
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/addr' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(123).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 342
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(121).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 341
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/read' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(116).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 330
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/size' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(122).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 327
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/addr' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(123).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 326
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/read' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(116).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 325
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(121).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 314
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/size' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(122).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 311
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/addr' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(123).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 310
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(121).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 309
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_valid' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(131).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 113
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_data' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(111).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 112
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/size' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(122).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 111
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/addr' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(123).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 110
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(121).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 109
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/read' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(116).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv Line: 108
-# Error loading design
-# End time: 09:07:32 on Mar 21,2023, Elapsed time: 0:00:00
-# Errors: 30, Warnings: 3
-# Compile of top.sv was successful with warnings.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-vsim -gui work.codma_tb
-# vsim -gui work.codma_tb 
-# Start time: 09:09:09 on Mar 21,2023
-# Loading sv_std.std
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-# ** Warning: (vsim-8311) System Verilog assertions are supported only in Questasim.
+# Loading work.ip_codma_rd_wr_machines_sv_unit
+# Loading work.ip_codma_read_machine
+# Loading work.ip_codma_write_machine
+# Loading work.ip_codma_main_machine_sv_unit
+# Loading work.ip_codma_main_machine
+# Loading work.ip_codma_crc_sv_unit
+# Loading work.ip_codma_crc
+# Loading work.ip_mem_pipelined
+add wave -position insertpoint sim:/codma_tb/inst_crc/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: oliver  Hostname: DESKTOP-OLIVER  ProcessID: 19304
+#           Attempting to use alternate WLF file "./wlftdj9t2c".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftdj9t2c
 run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# CRC under dev
+# fail - remainder and calc val are different
+# fail - remainder and calc val are different
+# some code                                                                              0
+# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(162)
+#    Time: 262 ps  Iteration: 0  Instance: /codma_tb
+# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 162
+# Compile of ip_mem.sv was successful.
+# Compile of ip_checker.sv was successful with warnings.
+# Compile of codma_tb.sv was successful.
+# Compile of ip_codma_interfaces.sv was successful.
+# Compile of ip_mem_pipelined.sv was successful.
+# Compile of ip_codma_top.sv was successful.
+# Compile of ip_codma_machine_states.sv was successful.
+# Compile of tb_tasks.sv was successful.
+# Compile of ip_codma_crc.sv was successful.
+# Compile of ip_codma_main_machine.sv was successful.
+# Compile of ip_codma_rd_wr_machines.sv was successful.
+# 11 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_tasks_pkg
+# Loading work.codma_tb
+# Loading work.BUS_IF
+# Loading work.ip_codma_machine_states_pkg
+# Loading work.ip_codma_top_sv_unit
+# Loading work.ip_codma_top
+# Loading work.ip_codma_rd_wr_machines_sv_unit
+# Loading work.ip_codma_read_machine
+# Loading work.ip_codma_write_machine
+# Loading work.ip_codma_main_machine_sv_unit
+# Loading work.ip_codma_main_machine
+# Loading work.ip_codma_crc_sv_unit
+# Loading work.ip_codma_crc
+# Loading work.ip_mem_pipelined
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# CRC under dev
 # Test Hanging
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(45)
-#    Time: 2031 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 45
-add wave -position end sim:/codma_tb/bus_if/*
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run -all
-# Test Hanging
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(45)
-#    Time: 2031 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 45
-add wave -position end  sim:/codma_tb/inst_codma/dma_state_r
-add wave -position end  sim:/codma_tb/inst_codma/wr_state_r
-add wave -position end  sim:/codma_tb/inst_codma/rd_state_r
-restart -f
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Test Hanging
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(45)
-#    Time: 2031 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 45
-add wave -position 0  sim:/codma_tb/clk
-restart -f
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Test Hanging
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(45)
-#    Time: 2031 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 45
-add wave -position end  sim:/codma_tb/inst_mem/mem_array
-restart -f
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Test Hanging
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(45)
-#    Time: 2031 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 45
-add wave -position 13  sim:/codma_tb/inst_codma/wr_state_next_s
-restart -f
-add wave -position 13  sim:/codma_tb/inst_codma/wr_state_next_s
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Test Hanging
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(45)
-#    Time: 2031 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 45
-# Compile of top.sv was successful with warnings.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
+# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(62)
+#    Time: 7031 ps  Iteration: 0  Instance: /codma_tb
+# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 62
 # Compile of ip_mem.sv was successful.
 # Compile of ip_checker.sv was successful with warnings.
 # Compile of codma_tb.sv was successful.
 # Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
+# Compile of ip_mem_pipelined.sv was successful.
+# Compile of ip_codma_top.sv was successful.
+# Compile of ip_codma_machine_states.sv was successful.
+# Compile of tb_tasks.sv was successful.
+# Compile of ip_codma_crc.sv was successful.
+# Compile of ip_codma_main_machine.sv was successful.
+# Compile of ip_codma_rd_wr_machines.sv was successful.
+# 11 compiles, 0 failed with no errors.
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
+# Loading work.tb_tasks_pkg
 # Loading work.codma_tb
 # Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
+# Loading work.ip_codma_machine_states_pkg
+# Loading work.ip_codma_top_sv_unit
 # Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-# ** Error (suppressible): (vsim-7033) Variable '/codma_tb/bus_if/write_data' driven in a combinational block, may not be driven by any other process. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/rd_wr_machines.sv(141).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb/inst_codma File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv Line: 111
-# Compile of top.sv was successful with warnings.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
+# Loading work.ip_codma_rd_wr_machines_sv_unit
+# Loading work.ip_codma_read_machine
+# Loading work.ip_codma_write_machine
+# Loading work.ip_codma_main_machine_sv_unit
+# Loading work.ip_codma_main_machine
+# Loading work.ip_codma_crc_sv_unit
+# Loading work.ip_codma_crc
+# Loading work.ip_mem_pipelined
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# CRC under dev
+# fail - remainder and calc val are different
+# fail - remainder and calc val are different
+# some code                                                                              0
+# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(162)
+#    Time: 302 ps  Iteration: 0  Instance: /codma_tb
+# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 162
 # Compile of ip_mem.sv was successful.
 # Compile of ip_checker.sv was successful with warnings.
 # Compile of codma_tb.sv was successful.
 # Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
+# Compile of ip_mem_pipelined.sv was successful.
+# Compile of ip_codma_top.sv was successful.
+# Compile of ip_codma_machine_states.sv was successful.
+# Compile of tb_tasks.sv was successful.
+# Compile of ip_codma_crc.sv was successful.
+# Compile of ip_codma_main_machine.sv was successful.
+# Compile of ip_codma_rd_wr_machines.sv was successful.
+# 11 compiles, 0 failed with no errors.
 restart -f
-# No Design Loaded!
-vsim -gui work.codma_tb
-# vsim -gui work.codma_tb 
-# Start time: 09:09:09 on Mar 21,2023
-# Loading sv_std.std
-# Loading work.dma_pkg
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_tasks_pkg
 # Loading work.codma_tb
 # Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
+# Loading work.ip_codma_machine_states_pkg
+# Loading work.ip_codma_top_sv_unit
 # Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_wr_machine'.  Expected 10, found 9.
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb/inst_codma/inst_wr_machine File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv Line: 59
-# ** Warning: (vsim-3722) C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(59): [TFMPC] - Missing connection for port 'data_reg'.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_wr_machine'.  Expected 10, found 9.
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb/inst_codma/inst_wr_machine File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv Line: 59
-# ** Warning: (vsim-3722) C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(59): [TFMPC] - Missing connection for port 'data_reg'.
+# Loading work.ip_codma_rd_wr_machines_sv_unit
+# Loading work.ip_codma_read_machine
+# Loading work.ip_codma_write_machine
+# Loading work.ip_codma_main_machine_sv_unit
+# Loading work.ip_codma_main_machine
+# Loading work.ip_codma_crc_sv_unit
+# Loading work.ip_codma_crc
+# Loading work.ip_mem_pipelined
 run -all
 # GetModuleFileName: The specified module could not be found.
 # 
 # 
-# Test Hanging
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(45)
-#    Time: 2031 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 45
-# Compile of top.sv was successful with warnings.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
+# CRC under dev
+# fail - remainder and calc val are different
+# fail - remainder and calc val are different
+# some code                                                                              0
+# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(162)
+#    Time: 250 ps  Iteration: 0  Instance: /codma_tb
+# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 162
 # Compile of ip_mem.sv was successful.
 # Compile of ip_checker.sv was successful with warnings.
 # Compile of codma_tb.sv was successful.
 # Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
+# Compile of ip_mem_pipelined.sv was successful.
+# Compile of ip_codma_top.sv was successful.
+# Compile of ip_codma_machine_states.sv was successful.
+# Compile of tb_tasks.sv was successful.
+# Compile of ip_codma_crc.sv was successful.
+# Compile of ip_codma_main_machine.sv was successful.
+# Compile of ip_codma_rd_wr_machines.sv was successful.
+# 11 compiles, 0 failed with no errors.
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
+# Loading work.tb_tasks_pkg
 # Loading work.codma_tb
 # Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
+# Loading work.ip_codma_machine_states_pkg
+# Loading work.ip_codma_top_sv_unit
 # Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-# ** Error (suppressible): (vsim-12003) Variable '/codma_tb/bus_if/size' written by continuous and procedural assignments. See C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv(140).
-#    Time: 0 ps  Iteration: 0  Instance: /codma_tb/inst_codma File: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv Line: 114
-# Compile of top.sv was successful with warnings.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
+# Loading work.ip_codma_rd_wr_machines_sv_unit
+# Loading work.ip_codma_read_machine
+# Loading work.ip_codma_write_machine
+# Loading work.ip_codma_main_machine_sv_unit
+# Loading work.ip_codma_main_machine
+# Loading work.ip_codma_crc_sv_unit
+# Loading work.ip_codma_crc
+# Loading work.ip_mem_pipelined
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# CRC under dev
+# fail - remainder and calc val are different
+# fail - remainder and calc val are different
+# some code                                                                              0
+# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(162)
+#    Time: 254 ps  Iteration: 0  Instance: /codma_tb
+# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 162
 # Compile of ip_mem.sv was successful.
 # Compile of ip_checker.sv was successful with warnings.
 # Compile of codma_tb.sv was successful.
 # Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-vsim -gui work.codma_tb
-# vsim -gui work.codma_tb 
-# Start time: 09:09:09 on Mar 21,2023
-# Loading sv_std.std
-# Loading work.dma_pkg
+# Compile of ip_mem_pipelined.sv was successful.
+# Compile of ip_codma_top.sv was successful.
+# Compile of ip_codma_machine_states.sv was successful.
+# Compile of tb_tasks.sv was successful.
+# Compile of ip_codma_crc.sv was successful.
+# Compile of ip_codma_main_machine.sv was successful.
+# Compile of ip_codma_rd_wr_machines.sv was successful.
+# 11 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_tasks_pkg
 # Loading work.codma_tb
 # Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
+# Loading work.ip_codma_machine_states_pkg
+# Loading work.ip_codma_top_sv_unit
 # Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.ip_codma_rd_wr_machines_sv_unit
+# Loading work.ip_codma_read_machine
+# Loading work.ip_codma_write_machine
+# Loading work.ip_codma_main_machine_sv_unit
+# Loading work.ip_codma_main_machine
+# Loading work.ip_codma_crc_sv_unit
+# Loading work.ip_codma_crc
+# Loading work.ip_mem_pipelined
 run -all
 # GetModuleFileName: The specified module could not be found.
 # 
 # 
-# Test Hanging
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(45)
-#    Time: 2031 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 45
-# Compile of top.sv was successful with warnings.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Test Hanging
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(45)
-#    Time: 2031 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 45
-# Compile of top.sv was successful with warnings.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# test failed: test type          0 ; len_bytes         32
-# src content 76d457ed462df78c, at location          6
-# dst content e5730aca9e314c3c, at location         24
-# ** Note: $stop    : tb_tasks.sv(150)
-#    Time: 416 ps  Iteration: 0  Instance: /codma_tb
-# Break in Task fail_message at tb_tasks.sv line 150
-# Compile of top.sv was successful with warnings.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# test failed: test type          0 ; len_bytes         32
-# src content 76d457ed462df78c, at location          6
-# dst content e5730aca9e314c3c, at location         24
-# ** Note: $stop    : tb_tasks.sv(150)
-#    Time: 416 ps  Iteration: 0  Instance: /codma_tb
-# Break in Task fail_message at tb_tasks.sv line 150
-# Compile of top.sv was successful with warnings.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-run -all
-# test failed: test type          0 ; len_bytes         32
-# src content 76d457ed462df78c, at location          6
-# dst content e5730aca9e314c3c, at location         24
-# ** Note: $stop    : tb_tasks.sv(150)
-#    Time: 416 ps  Iteration: 0  Instance: /codma_tb
-# Break in Task fail_message at tb_tasks.sv line 150
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-#############  Autofindloop Analysis  ###############
-#############  Loop found at time 94 ps ###############
-#   Active process: /codma_tb/inst_codma/inst_dma_machine/#IMPLICIT-WIRE(dma_state_next_s)#15 @ sub-iteration 0
-#     Source: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv:72
-#     Assigning reg to (val=3 unk=0)
-#   Active process: /codma_tb/inst_mem/#ASSIGN#459 @ sub-iteration 1
-#     Source: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv:79
-#   Active process: /codma_tb/inst_codma/inst_wr_machine/#IMPLICIT-WIRE(wr_state_next_s)#93 @ sub-iteration 1
-#     Source: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv:59
-#     Assigning reg to (val=2 unk=0)
-#   Active process: /codma_tb/inst_codma/inst_dma_machine/#IMPLICIT-WIRE(dma_state_next_s)#15 @ sub-iteration 2
-#     Source: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/top.sv:72
-#     Assigning reg to (val=1 unk=0)
-#   Active process: /codma_tb/inst_mem/#ASSIGN#459 @ sub-iteration 3
-#     Source: C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv:79
-################# END OF LOOP #################
-# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 94 ps.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 94 ps.
-# Compile of top.sv was successful with warnings.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 94 ps.
-add wave -position end  sim:/codma_tb/inst_codma/data_reg
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 94 ps.
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Test Hanging
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(45)
-#    Time: 2031 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 45
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# test failed: test type          0 ; len_bytes         32
-# src content 76d457ed462df78c, at location          6
-# dst content 7cfde9f9e33724c6, at location         24
-# ** Note: $stop    : tb_tasks.sv(150)
-#    Time: 404 ps  Iteration: 0  Instance: /codma_tb
-# Break in Task fail_message at tb_tasks.sv line 150
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# test failed: test type          2 ; len_bytes         32
-# src content 00000018000000dc, at location          8
-# dst content 00000018000000dc, at location         22
-# ** Note: $stop    : tb_tasks.sv(150)
-#    Time: 1080 ps  Iteration: 0  Instance: /codma_tb
-# Break in Task fail_message at tb_tasks.sv line 150
-add wave -position 11  sim:/codma_tb/inst_codma/inst_dma_machine/len_bytes
-restart -f
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# test failed: test type          2 ; len_bytes         32
-# src content 00000018000000dc, at location          8
-# dst content 00000018000000dc, at location         22
-# ** Note: $stop    : tb_tasks.sv(150)
-#    Time: 1080 ps  Iteration: 0  Instance: /codma_tb
-# Break in Task fail_message at tb_tasks.sv line 150
-add wave -position 11  sim:/codma_tb/task_type
-restart -f
-add wave -position 11  sim:/codma_tb/task_type
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# test failed: test type          2 ; len_bytes         32
-# src content 00000018000000dc, at location          8
-# dst content 00000018000000dc, at location         22
-# ** Note: $stop    : tb_tasks.sv(150)
-#    Time: 1080 ps  Iteration: 0  Instance: /codma_tb
-# Break in Task fail_message at tb_tasks.sv line 150
-add wave -position 14  sim:/codma_tb/inst_codma/inst_dma_machine/dma_state_next_s
-add wave -position 11  sim:/codma_tb/task_type
-run -all
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# DMA COMPUTE NOT YET DEFINED
-# TESTS PASS!
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(297)
-#    Time: 1350 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 297
-add wave -position 16  sim:/codma_tb/inst_codma/dma_state_next_s
-add wave -position 11  sim:/codma_tb/task_type
-restart -f
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# test failed: test type          2 ; len_bytes         32
-# src content 00000018000000dc, at location          8
-# dst content 00000018000000dc, at location         22
-# ** Note: $stop    : tb_tasks.sv(150)
-#    Time: 1080 ps  Iteration: 0  Instance: /codma_tb
-# Break in Task fail_message at tb_tasks.sv line 150
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# test failed: test type          2 ; len_bytes         32
-# src content 00000018000000dc, at location          8
-# dst content 00000018000000dc, at location         22
-# ** Note: $stop    : tb_tasks.sv(150)
-#    Time: 1080 ps  Iteration: 0  Instance: /codma_tb
-# Break in Task fail_message at tb_tasks.sv line 150
-add wave -position 9  sim:/codma_tb/inst_codma/inst_dma_machine/task_type
-restart -f
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# test failed: test type          2 ; len_bytes         32
-# src content 00000018000000dc, at location          8
-# dst content 00000018000000dc, at location         22
-# ** Note: $stop    : tb_tasks.sv(150)
-#    Time: 1080 ps  Iteration: 0  Instance: /codma_tb
-# Break in Task fail_message at tb_tasks.sv line 150
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-add wave -position end  sim:/codma_tb/check_data/task_type
-add wave -position end  sim:/codma_tb/check_data/task_type_l
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# test failed: test type          2 ; len_bytes         32
-# src content 00000018000000dc, at location          8
-# dst content 00000018000000dc, at location         22
-# ** Note: $stop    : tb_tasks.sv(150)
-#    Time: 1080 ps  Iteration: 0  Instance: /codma_tb
-# Break in Task fail_message at tb_tasks.sv line 150
-add wave -position 15  sim:/codma_tb/check_done
-add wave -position 16  sim:/codma_tb/test_done
-restart -f
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# test failed: test type          2 ; len_bytes         32
-# src content 00000018000000dc, at location          8
-# dst content 00000018000000dc, at location         22
-# ** Note: $stop    : tb_tasks.sv(150)
-#    Time: 1080 ps  Iteration: 0  Instance: /codma_tb
-# Break in Task fail_message at tb_tasks.sv line 150
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# test failed: test type          2 ; len_bytes         32
-# src content 00000018000000dc, at location          8
-# dst content 00000018000000dc, at location         22
-# ** Note: $stop    : tb_tasks.sv(150)
-#    Time: 1080 ps  Iteration: 0  Instance: /codma_tb
-# Break in Task fail_message at tb_tasks.sv line 150
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# Bytes transfered         32 of         32: SUCCESS
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# Test Hanging
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(45)
-#    Time: 2031 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 45
-add wave -position 15  sim:/codma_tb/inst_codma/rd_state_next_s
-restart -f
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# Bytes transfered         32 of         32: SUCCESS
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# Test Hanging
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(45)
-#    Time: 2031 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 45
-add wave -position insertpoint  \
-sim:/codma_tb/inst_codma/rd_state_next_s
-add wave -position end  sim:/codma_tb/inst_codma/rd_state_r
-add wave -position end  sim:/codma_tb/inst_codma/wr_state_r
-add wave -position 2  sim:/codma_tb/inst_codma/wr_state_next_s
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Test Hanging
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(45)
-#    Time: 2031 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 45
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# Bytes transfered         32 of         32: SUCCESS
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# Test Hanging
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(45)
-#    Time: 2031 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 45
-add wave -position end  sim:/codma_tb/test_done
-add wave -position end  sim:/codma_tb/check_done
-add wave -position 0  sim:/codma_tb/clk
-add wave -position 3  sim:/codma_tb/inst_codma/rd_state_r
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv failed with 3 errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 1 failed with 3 errors.
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv failed with 4 errors.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 1 failed with 4 errors.
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# Bytes transfered         32 of         32: SUCCESS
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# test failed: test type          1 ; len_bytes         64
-# src content 8484d609b1f05663, at location          1
-# dst content 81174a02d7563eae, at location         21
-# ** Note: $stop    : tb_tasks.sv(168)
-#    Time: 1104 ps  Iteration: 0  Instance: /codma_tb
-# Break in Task fail_message at tb_tasks.sv line 168
-add wave -position end  sim:/codma_tb/inst_mem/mem_array
-add wave -position 5  sim:/codma_tb/inst_codma/dma_state_r
-add wave -position 7  sim:/codma_tb/inst_codma/bus_if/error
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# Bytes transfered         32 of         32: SUCCESS
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# Task succesfully flagged an error - mem addr did not exist:         32
-# DMA COMPUTE NOT YET DEFINED
-# TESTS PASS!
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(309)
-#    Time: 1210 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 309
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# Bytes transfered         32 of         32: SUCCESS
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# Task succesfully flagged an error - mem addr did not exist:         32
-# The status correctly reflected this error at the status address          0
-# DMA COMPUTE NOT YET DEFINED
-# TESTS PASS!
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(320)
-#    Time: 1210 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 320
-add wave -position 8  sim:/codma_tb/inst_codma/busy_o
-restart -f
-add wave -position 8  sim:/codma_tb/inst_codma/irq_o
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# Bytes transfered         32 of         32: SUCCESS
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# Task succesfully flagged an error - mem addr did not exist:         32
-# The status correctly reflected this error at the status address          0
-# DMA COMPUTE NOT YET DEFINED
-# TESTS PASS!
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(320)
-#    Time: 1210 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 320
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv failed with 1 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 1 failed with 1 error.
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv failed with 1 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 1 failed with 1 error.
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv failed with 1 errors.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 1 failed with 1 error.
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# Bytes transfered         32 of         32: SUCCESS
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# status pointer updated correctly          0
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------        15
-# Begin Check: task type 0000000f
-# Task did NOT succesfully flag an error - mem addr did not exist:         32
-# DMA COMPUTE NOT YET DEFINED
-# TESTS PASS!
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(317)
-#    Time: 1246 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 317
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# Bytes transfered         32 of         32: SUCCESS
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# status pointer updated correctly          0
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------        15
-# Begin Check: task type 0000000f
-# Task did NOT succesfully flag an error - mem addr did not exist:         32
-# DMA COMPUTE NOT YET DEFINED
-# TESTS PASS!
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(317)
-#    Time: 1246 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 317
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# Bytes transfered         32 of         32: SUCCESS
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# status pointer updated correctly          0
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------        15
-# Begin Check: task type 0000000f
-# The status correctly reflected this error at the status address          0
-# DMA COMPUTE NOT YET DEFINED
-# TESTS PASS!
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(310)
-#    Time: 1246 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 310
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# Bytes transfered         32 of         32: SUCCESS
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# status pointer updated correctly          0
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------        15
-# Begin Check: task type 0000000f
-# The status correctly reflected this error at the status address          0
-# DMA COMPUTE NOT YET DEFINED
-# TESTS PASS!
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(311)
-#    Time: 1356 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 311
-add wave -position 7  sim:/codma_tb/inst_codma/inst_dma_machine/dma_state_next_s
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# Bytes transfered         32 of         32: SUCCESS
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# status pointer updated correctly          0
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------        15
-# Begin Check: task type 0000000f
-# The status correctly reflected this error at the status address          0
-# DMA COMPUTE NOT YET DEFINED
-# TESTS PASS!
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(311)
-#    Time: 1356 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 311
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# Bytes transfered         32 of         32: SUCCESS
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# status pointer updated correctly          0
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------        15
-# Begin Check: task type 0000000f
-# The status correctly reflected this error at the status address          0
-# DMA COMPUTE NOT YET DEFINED
-# TESTS PASS!
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(311)
-#    Time: 1356 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 311
-add wave -position 8  sim:/codma_tb/start_s
-restart -f
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# Bytes transfered         32 of         32: SUCCESS
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# status pointer updated correctly          0
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------        15
-# Begin Check: task type 0000000f
-# The status correctly reflected this error at the status address          0
-# DMA COMPUTE NOT YET DEFINED
-# TESTS PASS!
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(311)
-#    Time: 1356 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 311
-# Compile of top.sv was successful.
-# Compile of codma_machine.sv was successful.
-# Compile of rd_wr_machines.sv was successful.
-# Compile of ip_mem.sv was successful.
-# Compile of ip_checker.sv was successful with warnings.
-# Compile of codma_tb.sv was successful.
-# Compile of ip_codma_interfaces.sv was successful.
-# Compile of compute_crc.sv was successful.
-# 8 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.dma_pkg
-# Loading work.codma_tb
-# Loading work.BUS_IF
-# Loading work.write_pkg
-# Loading work.read_pkg
-# Loading work.ip_codma_top
-# Loading work.read_machine
-# Loading work.write_machine
-# Loading work.codma_machine
-# Loading work.compute_crc
-# Loading work.ip_mem
-# Loading work.ip_checker
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         32: SUCCESS
-# Bytes transfered         16 of         32: SUCCESS
-# Bytes transfered         24 of         32: SUCCESS
-# Bytes transfered         32 of         32: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         1
-# Begin Check: task type          1
-# Bytes transfered         32 of         64: SUCCESS
-# Bytes transfered         64 of         64: SUCCESS
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------         2
-# Begin Check: task type          2
-# Bytes transfered         32 of         32: SUCCESS
-# Check Linked Task: task type          0
-# //-------------------------------------------------------------------------------------------------------         0
-# Begin Check: task type          0
-# Bytes transfered          8 of         24: SUCCESS
-# Bytes transfered         16 of         24: SUCCESS
-# Bytes transfered         24 of         24: SUCCESS
-# status pointer updated correctly          0
-# status pointer updated correctly          0
-# //-------------------------------------------------------------------------------------------------------        15
-# Begin Check: task type 0000000f
-# The status correctly reflected this error at the status address          0
-# DMA COMPUTE NOT YET DEFINED
-# TESTS PASS!
-# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(312)
-#    Time: 1356 ps  Iteration: 0  Instance: /codma_tb
-# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 312
+# CRC under dev
+# fail - remainder and calc val are different
+# fail - remainder and calc val are different
+# some code                                                                              0
+# ** Note: $stop    : C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv(162)
+#    Time: 242 ps  Iteration: 0  Instance: /codma_tb
+# Break in Module codma_tb at C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_git/codma_tb.sv line 162
