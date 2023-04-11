@@ -55,11 +55,11 @@ module ip_codma_read_machine (
             RD_GRANTED:
             begin
                 // Looking for the word count to match expected words
-                if (rd_size == 9 && word_count_rd == 6) begin
+                    if (rd_size == 9 && word_count_rd == 8) begin
                     rd_state_next_s = RD_IDLE;
-                end else if (rd_size == 8 && word_count_rd == 2) begin
+                    end else if (rd_size == 8 && word_count_rd == 4) begin
                     rd_state_next_s = RD_IDLE;
-                end else if (rd_size == 3 && word_count_rd == 0) begin
+                    end else if (rd_size == 3 && word_count_rd == 2) begin
                     rd_state_next_s = RD_IDLE;
                 end
             end
