@@ -1,7 +1,14 @@
+/*
+Oliver Anderson
+Univeristy of Bath
+codma FYP 2023
 
-import ip_codma_machine_states_pkg::*;
+This file contains the logic for the main state machine for the CODMA.
+*/
 
-module ip_codma_main_machine (
+module ip_codma_main_machine
+import ip_codma_states_pkg::*;
+(
         // controls and flags   
         input               clk_i,
         input               reset_n_i,    
@@ -28,9 +35,18 @@ module ip_codma_main_machine (
         input                    need_write_o,
         output logic [7:0][31:0] write_data,
 
+        // States
+        input read_state_t       rd_state_r,
+        input read_state_t       rd_state_next_s,
+        input write_state_t      wr_state_r,
+        input write_state_t      wr_state_next_s,
+        output dma_state_t       dma_state_r,
+        output dma_state_t       dma_state_next_s, 
+
         // CRC flag
         input                    crc_flag_i       
     );
+    
     // internal registers
     logic [3:0][31:0] task_dependant_data;
     logic [31:0] task_type;

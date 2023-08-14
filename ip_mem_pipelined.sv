@@ -1,3 +1,5 @@
+// This module re-creates the behaviour of a simplified system memory
+
 module ip_mem_pipelined
 #(
 

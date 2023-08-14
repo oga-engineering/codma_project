@@ -1,5 +1,11 @@
-// Module for the compute CRC code implementation
-import ip_codma_machine_states_pkg::*;
+/*
+Oliver Anderson
+Univeristy of Bath
+codma FYP 2023
+
+This module is incomplete as this feature was dropped from the project.
+*/
+
 module ip_codma_crc (
         input                       clk_i,
         input                       reset_n_i,

@@ -3,10 +3,9 @@ Oliver Anderson
 Univeristy of Bath
 codma FYP 2023
 
-This file contains the definitions of the state machine states. Using packages allowed
-them to be used in multiple modules and files.
+This file contains the definitions of the state machine states.
 */
-package ip_codma_machine_states_pkg;
+package ip_codma_states_pkg;
     typedef enum logic [1:0]
         {
           RD_IDLE	    = 2'b00,				 
@@ -15,8 +14,6 @@ package ip_codma_machine_states_pkg;
           RD_UNUSED   = 2'b11
         }
         read_state_t;
-        read_state_t    rd_state_r;
-        read_state_t    rd_state_next_s;
 
     typedef enum logic [1:0]
         {
@@ -26,8 +23,6 @@ package ip_codma_machine_states_pkg;
           WR_UNUSED   = 2'b11
         }
         write_state_t;
-        write_state_t   wr_state_r;
-        write_state_t   wr_state_next_s;
 
     typedef enum logic [2:0]
         {
@@ -41,6 +36,4 @@ package ip_codma_machine_states_pkg;
           DMA_UNUSED    = 3'b111
         }
         dma_state_t;
-        dma_state_t      dma_state_r;
-        dma_state_t      dma_state_next_s;
 endpackage

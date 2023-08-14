@@ -5,11 +5,8 @@ codma FYP 2023
 
 Top level module file for the codma. This file connects the codma, read and write machine modules.
 It is the ONLY module to drive the bus interface signals to avoid contentions.
-It will contain the assertions to confirm the state machines do not fall into unknown states. Though
-the unknown states will be defined for a "belt and braces" approach to eliminate this as a point of failure.
 */
 
-import ip_codma_machine_states_pkg::* ;
 
 //=======================================================================================
 // CODMA MODULE START
@@ -37,6 +34,7 @@ module ip_codma_top
 //=======================================================================================
 // INTERNAL SIGNALS AND MARKERS
 //=======================================================================================
+import ip_codma_states_pkg::* ;
 
 logic [31:0] reg_addr, reg_addr_wr;
 logic [7:0]  reg_size, reg_size_wr;
@@ -50,6 +48,15 @@ logic [7:0][31:0] write_data;
 logic [7:0][31:0] crc_code;
 logic             crc_flag_s;
 
+read_state_t    rd_state_r;
+read_state_t    rd_state_next_s;
+
+write_state_t   wr_state_r;
+write_state_t   wr_state_next_s;
+
+dma_state_t     dma_state_r;
+dma_state_t     dma_state_next_s;
+
 //=======================================================================================
 // CONNECT THE MODULES
 //=======================================================================================
@@ -62,6 +69,12 @@ ip_codma_read_machine inst_rd_machine(
     .need_read_o(need_read_o),
     .stop_i(stop_i),
     .data_reg_o(data_reg),
+    .rd_state_r(rd_state_r),
+    .rd_state_next_s(rd_state_next_s),
+    .wr_state_r(wr_state_r),
+    .wr_state_next_s(wr_state_next_s),
+    .dma_state_r(dma_state_r),
+    .dma_state_next_s(dma_state_next_s),
     .bus_if(bus_if)
 );
 
@@ -73,6 +86,12 @@ ip_codma_write_machine inst_wr_machine(
     .need_write_o(need_write_o),
     .stop_i(stop_i),
     .word_count_wr(write_count_s),
+    .rd_state_r(rd_state_r),
+    .rd_state_next_s(rd_state_next_s),
+    .wr_state_r(wr_state_r),
+    .wr_state_next_s(wr_state_next_s),
+    .dma_state_r(dma_state_r),
+    .dma_state_next_s(dma_state_next_s),
     .bus_if(bus_if)
 );
 
@@ -97,6 +116,12 @@ ip_codma_main_machine inst_dma_machine(
     .need_write_o(need_write_o),
     .write_data(write_data),
     .data_reg(data_reg),
+    .rd_state_r(rd_state_r),
+    .rd_state_next_s(rd_state_next_s),
+    .wr_state_r(wr_state_r),
+    .wr_state_next_s(wr_state_next_s),
+    .dma_state_r(dma_state_r),
+    .dma_state_next_s(dma_state_next_s),
     .crc_flag_i(crc_flag_s)
 );
 

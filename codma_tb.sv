@@ -3,8 +3,7 @@ Oliver Anderson
 Univeristy of Bath
 codma FYP 2023
 
-Initial testbench provided by Infineon and heavily modified to allow a proof of concept
-simulation of the codma. 
+Proof of concept testbench to simulate the codma and find initial flaws in the logic. 
 */
 
 
@@ -367,11 +366,6 @@ if (USE_CODMA) begin
 		stop_s = '0;
 		#10
 		$display("Stop signal test complete %d",i);
-
-		// Setup a new test strategy here for the error handling
-		//$display("putting each state machine into unused states");
-		//inst_codma.dma_state_r = DMA_UNUSED;
-		//#20
 
 	end
 	$stop;
