@@ -1,7 +1,0 @@
-Tue Apr 11 13:25:09 BST 2023
-Trace back: can't read "ProjectFiles(C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_fyp_v2/ip_codma_fifo_pkg.sv)": no such element in array
-    while executing
-".vcop Eval {Project::compileAllFiles }"
-    (menu invoke)
-  <2:C:/intelFPGA/20.1/modelsim_ase/win32aloem/tk8.6/bgerror.tcl:106: ::tkerror {can't read "ProjectFiles(C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_fyp_v2/ip_codma_fifo_pkg.sv)": no such element in array}
-  <1:eval:1: ::tk::dialog::error::bgerror {can't read "ProjectFiles(C:/Users/oliver/OneDrive/Documents/Engineering/University/codma_fyp_v2/ip_codma_fifo_pkg.sv)": no such element in array}
