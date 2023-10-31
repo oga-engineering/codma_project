@@ -9,20 +9,17 @@ Proof of concept testbench to simulate the codma and find initial flaws in the l
 
 module codma_tb ();
 
-import machine_states_pkg::*;
+import ip_codma_states_pkg::*;
 import tb_tasks_pkg::* ;
 
 //=======================================================================================
 // Local Signal Definition
 //=======================================================================================
-logic EXAMPLE_PRESET;
-assign EXAMPLE_PRESET = 0;
-
 logic USE_CODMA;
-assign USE_CODMA = 0;
+assign USE_CODMA = 1;
 
 logic DEV_CRC;
-assign DEV_CRC = 1;
+assign DEV_CRC = 0;
 
 logic	clk, reset_n;
 logic	start_s, stop_s, busy_s;
@@ -369,6 +366,7 @@ if (USE_CODMA) begin
 
 	end
 	$stop;
+end
 end
 
 endmodule
