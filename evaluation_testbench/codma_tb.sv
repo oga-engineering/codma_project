@@ -26,6 +26,7 @@ logic	start_s, stop_s, busy_s;
 logic	[31:0]	task_pointer, status_pointer;
 logic	irq_s;
 BUS_IF	bus_if();
+CPU_IF  cpu_if();
 
 event test_done;
 event check_done;
@@ -71,15 +72,9 @@ ip_codma_top inst_codma (
 	.clk_i			(clk),
 	.reset_n_i		(reset_n),
 	// control interface
-	.start_i		(start_s),
-	.stop_i			(stop_s),
-	.busy_o			(busy_s),
-	.task_pointer_i		(task_pointer),
-	.status_pointer_i	(status_pointer),
+	.cpu_if 		(cpu_if.slave),
 	// bus interface
 	.bus_if			(bus_if.master),
-	// interrupt output
-	.irq_o			(irq_s)
 );
 
 logic [7:0][31:0] data_reg;
@@ -87,14 +82,6 @@ logic [7:0][31:0] crc_output;
 logic crc_flag_s;
 assign data_reg = 'b1;
 assign crc_output = 'd0;
-
-ip_codma_crc inst_crc (
-		.clk_i(clk),
-		.reset_n_i(reset_n),
-		.data_reg(data_reg),
-		.crc_complete_flag(crc_flag_s),
-		.crc_output(crc_output)
-	);
 
 //--------------------------------------------------
 // Memory Instantiation
@@ -110,6 +97,21 @@ ip_mem_pipelined #(
 	// bus interface
 	.bus_if		(bus_if.slave)
 );
+
+//--------------------------------------------------
+// Assign signals to CPU interface
+//--------------------------------------------------
+always_comb
+begin 
+	// From DUT
+	irq_s 					<= cpu_if.irq;
+	busy_s 					<= cpu_if.busy;
+	// to DUT
+	cpu_if.status_pointer	<= status_pointer;
+	cpu_if.task_pointer		<= task_pointer;
+	cpu_if.start			<= start;
+	cpu_if.stop				<= stop;
+end
 
 //=======================================================================================
 // TB Example Stimulus 
