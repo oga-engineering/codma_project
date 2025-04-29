@@ -3,6 +3,10 @@ This is the top level of the CODMA project. It contains the rtl and the testbenc
 
 This project began as a masters design project in 2023. It has been used to improve SystemVerilog coding skills and serves as an example of basic rtl coding abilities.
 
+## Requirements
+- Verilator
+- Bash environment
+
 ## To Do:
 - Import the UVM testbench as a submodule 
 - Use a BFM style testbench in SystemVerilog
