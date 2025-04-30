@@ -5,7 +5,9 @@ This project began as a masters design project in 2023. It has been used to impr
 
 ## Requirements
 - Verilator
-- Bash environment
+
+## Verilator Build
+To build the verilator objects, cd into the scripts submodule and run "python3 build_verilator.py".
 
 ## To Do:
 - Import the UVM testbench as a submodule 
