@@ -1,1 +1,4 @@
 sim/
+cocotb_testbench/__pycache__
+cocotb_testbench/sim_build
+cocotb_testbench/results.xml
