@@ -4,7 +4,9 @@ This is the top level of the CODMA project. It contains the rtl and the testbenc
 This project began as a masters design project in 2023. It has been used to improve SystemVerilog coding skills and serves as an example of basic rtl coding abilities.
 
 ## Requirements
-- Verilator
+- Verilator for cocotb testbenches (under dev)
+- Simulator for functional testbenches (requires maintenance)
+- Simulator for UVM testbenches (under dev)
 
 ## Verilator Build
 To build the verilator objects, cd into the scripts submodule and run "python3 build_verilator.py".
