@@ -1,6 +1,3 @@
 [submodule "rtl"]
 	path = rtl
 	url = https://github.com/oga-engineering/codma_rtl.git
-[submodule "scripts"]
-	path = scripts
-	url = https://github.com/oga-engineering/scripts.git
