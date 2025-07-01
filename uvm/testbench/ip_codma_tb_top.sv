@@ -18,10 +18,17 @@ module ip_codma_tb_top;
    mem_interface      mem_if();
    cpu_interface      cpu_if();
 
+   // DUT
    ip_codma_top ip_codma_dut(
-      clock, reset_n,
+      reset_n_i,
       cpu_if.slave,
       mem_if.master
+   );
+
+   // Memory Model
+   ip_mem_pipelined ip_memory_model(
+      reset_n_i,
+      mem_if.slave
    );
 
    // Clock and reset_n generator
@@ -34,22 +41,16 @@ module ip_codma_tb_top;
 
       $display("static reset sequence");
       reset_n = 0;
-      clock = 0;
       
       fork begin
          run_test();
       end begin
          #8;
-         //repeat(5) @(negedge clock);
          reset_n = 1;
          end
       join
       uvm_top.set_timeout(1000us);
    end
-   //
-
-   // should setup a clock uvc for better timing control
-   always #2 clock = ~clock;
 
 
 endmodule

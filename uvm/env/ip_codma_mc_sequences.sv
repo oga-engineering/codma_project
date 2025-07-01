@@ -28,12 +28,6 @@ class virtual_sequences extends uvm_sequence;
       m_cpu_seq = cpu_simple_sequence  ::type_id::create("m_cpu_seq");
 
       pass_cfg = get_config(dst_addr, src_addr, task_addr, len_bytes, task_type, stat_addr);
-      dst_addr    = pass_cfg.dst_addr;
-      src_addr    = pass_cfg.src_addr;
-      task_addr   = pass_cfg.task_addr;
-      len_bytes   = pass_cfg.len_bytes;
-      task_type   = pass_cfg.task_type;
-      stat_addr   = pass_cfg.stat_addr;
 
       `ifdef UVM_POST_VERSION_1_1
          m_mem_seq.set_starting_phase(get_starting_phase());
@@ -56,6 +50,7 @@ class virtual_sequences extends uvm_sequence;
       if(!m_cpu_seq.randomize() with   {i_status_pointer  == pass_cfg.stat_addr;
                                         i_task_pointer    == pass_cfg.task_addr;})
          `uvm_fatal(get_type_name(),"Failed to randomize m_cpu_seq from virtual sequence")
+
       // start the non-virtual sequences on the instantion of the respective sequencer in the virtual seqr
       fork
          m_mem_seq.start(p_sequencer.m_mem_seqr);
