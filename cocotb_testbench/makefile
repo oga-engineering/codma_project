@@ -6,7 +6,7 @@ TOPLEVEL_LANG ?= verilog
 
 RTL_DIR = $(PWD)/../rtl
 
-VERILOG_SOURCES += $(RTL_DIR)/ip_codma_pkg.sv $(RTL_DIR)/ip_codma_interfaces_verilator.sv  $(RTL_DIR)/ip_codma_main_machine.sv  $(RTL_DIR)/ip_codma_rd_machine.sv  $(RTL_DIR)/ip_codma_wr_machine.sv $(RTL_DIR)/ip_codma_top.sv ip_codma_wrapper.sv
+VERILOG_SOURCES += $(RTL_DIR)/ip_codma_pkg.sv $(RTL_DIR)/ip_codma_interfaces.sv  $(RTL_DIR)/ip_codma_main_machine.sv  $(RTL_DIR)/ip_codma_rd_machine.sv  $(RTL_DIR)/ip_codma_wr_machine.sv $(RTL_DIR)/ip_codma_top.sv ip_codma_wrapper.sv
 # use VHDL_SOURCES for VHDL files
 
 # TOPLEVEL is the name of the toplevel module in your Verilog or VHDL file
